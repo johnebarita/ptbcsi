@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background: grey;
+            font-family: sans-serif;
+        }
+        .intro{text-align:center;}
+        .page {
+            background: white;
+            /*max-width: 1200px;*/
+            margin: 20rem auto;
+            /*margin: 0 auto;*/
+        }
+        .table-con {
+            overflow: auto;
+            height: 500px;
+            position: relative;
+            border: 1px solid  #aaa;
+        }
+
+        /*table.data-table {*/
+            /*border-collapse: collapse;*/
+            /*width: 100%;*/
+            /*width: 1500px; !* for testing only *!*/
+        /*}*/
+
+        .data-table thead th:first-child {
+            width: 40px;
+            padding: 0;
+
+        }
+
+        .data-table th {
+            text-align: left;
+            /*transition:transform .5s ease;*/
+        }
+
+        .data-table thead {
+            background: white;
+
+        }
+        .data-table tbody td {
+            border: 1px solid #aaa;
+        }
+        .data-table tbody tr:nth-child(even) td:not(:first-child) {
+            background: yellow;
+        }
+        .data-table tbody td:first-child {
+            background: none;
+            padding: 0;
+        }
+        .data-table th,
+        .data-table td {
+            padding: 10px 5px;
+        }
+
+        /*.data-table thead th {*/
+            /*background: #000;*/
+            /*color: #fff;*/
+            /*position: -webkit-sticky;*/
+            /*position: sticky;*/
+            /*top: 0;*/
+            /*border-right: 1px solid  #aaa;*/
+        /*}*/
+
+        .data-table thead .una th{
+            background: #000;
+            color: #fff;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            border-right: 1px solid  #aaa;
+        }
+        .data-table thead .duha th{
+              background: #000;
+              color: #fff;
+              position: -webkit-sticky;
+              position: sticky;
+              top: 9%;
+              border-right: 1px solid  #aaa;
+          }
+
+        /* check for position:sticky support */
+        detect {
+            display: none;
+        }
+        @supports (position: sticky) or (position: -webkit-sticky) {
+            detect {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="table-con" id="table">
+        <table class="data-table">
+            <thead>
+            <tr class="una" >
+                <th></th>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+                <th>Header 5</th>
+                <th>Header 6</th>
+                <th>Header 7</th>
+                <th>Header 8</th>
+                <th>Header 9</th>
+            </tr>
+            <tr class="duha">
+                <th></th>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+                <th>Header 5</th>
+                <th>Header 6</th>
+                <th>Header 7</th>
+                <th>Header 8</th>
+                <th>Header 9</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Data - 1256</td>
+                <td>Data - 1256 Data - 1256 Data - 1256</td>
+                <td>Data - 1256</td>
+                <td>1256</td>
+                <td>125</td>
+                <td>Data - abc</td>
+                <td>abc</td>
+                <td>abc</td>
+                <td>ABCDE</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
