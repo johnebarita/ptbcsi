@@ -1365,17 +1365,10 @@ pre code {
   }
 }
 
-.
-
-
 .table {
   width: 100%;
   margin-bottom: 1rem;
   color: #858796;
-}
-
-.table.persistent th{
-  background: red;
 }
 
 .table th,
@@ -1714,7 +1707,6 @@ pre code {
 .table-responsive > .table-bordered {
   border: 0;
 }
-
 
 .form-control {
   display: block;
