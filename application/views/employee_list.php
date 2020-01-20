@@ -8,35 +8,31 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-3 text-gray-800">Employee List</h1>
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
+        information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
+            DataTables documentation</a>.</p>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Employee Lists</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
+                <input type="button" class="btn btn-facebook" value="Add Employee" data-toggle="modal" data-target="#addEmp"><br><br>
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <td class="center">Employee ID</td>
+                        <td class="center">Name</td>
+                        <td class="center">Position</td>
+                        <td class="center">Schedule</td>
+                        <td class="center">Member Since</td>
+                        <td class="center">Tools</td>
                     </tr>
                     </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                    </tr>
-                    </tfoot>
                     <tbody>
                     <tr>
                         <td>Tiger Nixon</td>
@@ -496,6 +492,87 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="addEmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mod">
+                    <!--                    <form>-->
+                    <!--                        <div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Firstname: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="username">-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                        <div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Lastname: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div>-->
+                    <!--                        <div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Address: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div><div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Birthdate: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div><div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Contact Info: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div><div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Gender: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div><div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Position: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div><div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Schedule: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div><div class="input-group form-group">-->
+                    <!--                            <div class="input-group-prepend">-->
+                    <!--                                <span class="input-group-text">Date Hired: </span>-->
+                    <!--                            </div>-->
+                    <!--                            <input type="text" class="form-control" placeholder="password">-->
+                    <!--                        </div>-->
+                    <!---->
+                    <!--                    </form>-->
+                    <label for="fname">Firstname: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="names input-group"><br>
+                    <label for="lname">Lastname: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="names"><br>
+                    <label for="address">Address: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="address"><br>
+                    <label for="bdate">Birthdate: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="bdate"><br>
+                    <label for="con">Contact Info: </label>&nbsp;&nbsp;<input type="text" class="con"><br>
+                    <label for="gender">Gender: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="gender"><br>
+                    <label for="position">Position: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="position"><br>
+                    <label for="sched">Schedule: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="sched"><br>
+                    <label for="dhired">Date Hired: </label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="dhired">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>

@@ -69,4 +69,14 @@ class Home extends CI_Controller
         $data['page_load'] = 'payroll';
         $this->load->view('includes/template', $data);
     }
+    public function leave_requests()
+    {
+        $data['page_load'] = 'leave_requests';
+        $this->load->view('includes/template', $data);
+    }
+    public function employees_leave_requests ()
+    {
+        $data['page_load'] = 'employees_leave_requests';
+        $this->load->view('includes/template', $data);
+    }
 }

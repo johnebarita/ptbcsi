@@ -15,7 +15,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">PTBCSI</div>
     </a>
 
     <!-- Divider -->
@@ -46,7 +46,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
            aria-controls="collapseTwo">
-            <i class="fas fa-users fa-cog"></i>
+            <i class="fas fa-fw fa-cog"></i>
             <span>Employees</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -56,6 +56,7 @@
                 <a class="collapse-item" href="">Overtime</a>
                 <a class="collapse-item" href="">Cash Advance</a>
                 <a class="collapse-item" href="">Schedules</a>
+                <a class="collapse-item" href="leave_requests">Leave Requests</a>
                 <a class="collapse-item" href="button">Buttons</a>
                 <a class="collapse-item" href="card">Cards</a>
             </div>
@@ -79,13 +80,6 @@
             </div>
         </div>
     </li>
-
-    <li class="nav-item ">
-        <a class="nav-link" href="payroll">
-            <i class="fas fa-fw fa-calculator"></i>
-            <span>Payroll</span></a>
-    </li>
-
 
     <!-- Divider -->
     <hr class="sidebar-divider">
