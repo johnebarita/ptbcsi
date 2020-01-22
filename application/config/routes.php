@@ -61,5 +61,7 @@ $route['color'] = 'home/color';
 $route['border'] = 'home/border';
 $route['animation'] = 'home/animation';
 $route['other'] = 'home/other';
+$route['payroll'] = 'home/payroll';
+$route['test'] = 'attendancecontroller/test';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

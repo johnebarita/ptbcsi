@@ -79,4 +79,9 @@ class Home extends CI_Controller
         $data['page_load'] = 'employees_leave_requests';
         $this->load->view('includes/template', $data);
     }
+    public function test ()
+    {
+        $data['page_load'] = 'employees_leave_requests';
+        $this->load->view('includes/template', $data);
+    }
 }

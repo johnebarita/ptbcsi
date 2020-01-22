@@ -6,37 +6,85 @@
  * Time: 10:45 AM
  */ ?>
 <style>
+    .fancyTable td, .fancyTable th {
+        /* appearance */
+        border: 1px solid #778899;
 
-    .data-table {
-        overflow: auto;
-        height: 500px;
-        position: relative;
-        font-size: 14px;
+        /* size */
+        padding: 5px;
     }
 
-    .data-table th,
-    .data-table td {
-        white-space: nowrap;
+    .fancyTable {
+        /* text */
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
-    .data-table thead .una th {
-        background: #000;
-        color: #fff;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        border-right: 1px solid #aaa;
+    .fancyTable tbody tr td {
+        /* appearance */
+        background-color: #eef2f9;
+        background-image: -moz-linear-gradient(
+                top,
+                rgba(255,255,255,0.4) 0%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0.1) 51%,
+                rgba(255,255,255,0.0) 100%);
+
+        background-image: -webkit-gradient(
+                linear, left top, left bottom,
+                color-stop(0%,rgba(255,255,255,0.4)),
+                color-stop(50%,rgba(255,255,255,0.2)),
+                color-stop(51%,rgba(255,255,255,0.1)),
+                color-stop(100%,rgba(255,255,255,0.0)));
+
+        /* text */
+        color: #262c31;
+        font-size: 11px;
     }
 
-    .data-table thead .duha th {
-        background: #000;
-        color: #fff;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 9.1%;
-        border-right: 1px solid #aaa;
+    .fancyTable tbody tr.odd td {
+        /* appearance */
+        background-color: #d6e0ef;
+        background-image: -moz-linear-gradient(
+                top,
+                rgba(255,255,255,0.4) 0%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0.1) 51%,
+                rgba(255,255,255,0.0) 100%);
+
+        background-image: -webkit-gradient(
+                linear, left top, left bottom,
+                color-stop(0%,rgba(255,255,255,0.4)),
+                color-stop(50%,rgba(255,255,255,0.2)),
+                color-stop(51%,rgba(255,255,255,0.1)),
+                color-stop(100%,rgba(255,255,255,0.0)));
     }
 
+    .fancyTable thead tr th,
+    .fancyTable thead tr td,
+    .fancyTable tfoot tr th,
+    .fancyTable tfoot tr td {
+        /* appearance */
+        background-color: #8ca9cf;
+        background-image: -moz-linear-gradient(
+                top,
+                rgba(255,255,255,0.4) 0%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0.1) 51%,
+                rgba(255,255,255,0.0) 100%);
+
+        background-image: -webkit-gradient(
+                linear, left top, left bottom,
+                color-stop(0%,rgba(255,255,255,0.4)),
+                color-stop(50%,rgba(255,255,255,0.2)),
+                color-stop(51%,rgba(255,255,255,0.1)),
+                color-stop(100%,rgba(255,255,255,0.0)));
+
+        /* text */
+        color: #121517;
+        font-size: 12px;
+        font-weight: bold;
+        text-shadow: 0 1px 1px #e8ebee;
+    }
 </style>
 <div class="container-fluid ">
 
@@ -48,9 +96,8 @@
             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
         </div>
         <div class="card-body">
-            <div class="table-responsive-sm"
-                 style="height:500px;overflow-y: scroll;border: 1px solid #e3e6f0 !important;">
-                <table class="table table-bordered " width="100%" cellspacing="0" style="overflow-y: scroll">
+            <div class="table-responsive-sm"  id="table-scroll" style="height:500px;overflow-y: scroll;border: 1px solid #e3e6f0 !important;">
+                <table class="table table-bordered persistent-table " width="100%" cellspacing="0" style="overflow-y: scroll">
                     <thead class="persistent-tp">
                     <tr>
                         <th rowspan="2" class="align-middle">No.</span></th>
@@ -196,433 +243,224 @@
         </div>
     </div>
 
+
     <div class="card shadow mb-4 ">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-        </div>
         <div class="card-body">
-            <div class="table-responsive-sm data-table" id="table">
-                <table class=" table table-bordered data-table ">
+            <div class="table" id="" style="width: 620px;height: 250px;overflow: auto;">
+                <table class="fancyTable"  style="boder:1px solid red" id="myTable01" cellpadding="0" cellspacing="0">
                     <thead>
-                    <tr class="una">
-                        <th>No</th>
-                        <th>Header 1</th>
-                        <th>Header 2</th>
-                        <th>Header 3</th>
-                        <th>Header 4</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                        <th>Header 7</th>
-                        <th>Header 8</th>
-                        <th>Header 9</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                        <th>Header 7</th>
-                        <th>Header 8</th>
-                        <th>Header 9</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                        <th>Header 7</th>
-                        <th>Header 8</th>
-                        <th>Header 9</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                        <th>Header 7</th>
-                        <th>Header 8</th>
-                        <th>Header 9</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                        <th>Header 7</th>
-                        <th>Header 8</th>
-                        <th>Header 9</th>
+                    <tr>
+                        <th rowspan="2">Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
+                        <th>Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
+                        <th>Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
+                        <th>Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
+                        <th>Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
+                        <th>Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
                     </tr>
-                    <tr class="duha">
-                        <th></th>
-                        <th>Header 1</th>
-                        <th>Header 2</th>
-                        <th>Header 3</th>
-                        <th>Header 4</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                        <th>Header 7</th>
-                        <th>Header 8</th>
-                        <th>Header 9</th>
+                    <tr>
+                        <!--   --><th>Browser</th>
+                        <th>Visits</th>
+                        <th>Pages/Visit</th>
+                        <th>Avg. Time on Site</th>
+                        <th>% New Visits</th>
+                        <th>Bounce Rate</th>
+
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Data - 1256</td>
-                        <td>Data - 1256 Data - 1256 Data - 1256</td>
-                        <td>Data - 1256</td>
-                        <td>1256</td>
-                        <td>125</td>
-                        <td>Data - abc</td>
-                        <td>abc</td>
-                        <td>abc</td>
-                        <td>ABCDE</td>
+                        <td>Firefox</td>
+                        <td>1,990</td>
+                        <td>3.11</td>
+                        <td>00:04:22</td>
+                        <td>70.00%</td>
+                        <td>32.61%</td>
                     </tr>
                     </tbody>
                 </table>

@@ -1486,13 +1486,19 @@ pre code {
     margin-bottom: 1rem;
     color: #858796
 }
+.persistent-table{
+    border-top: 0 !important;
+}
 
+.persistent-table th{
+    border:0 !important;
+
+}
 
 .persistent-tp th{
     background:#4e73df;
     color:white;
     position: sticky;
-    border-radius: 1px;
     top:0;
 
 }
@@ -1500,7 +1506,7 @@ pre code {
     background:#4e73df ;
     color:white;
     position: sticky;
-    top:51px;
+    top:48px;
 }
 
 .table td, .table th {

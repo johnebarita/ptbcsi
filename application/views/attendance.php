@@ -24,37 +24,36 @@
                         </table>
                         <br>
 
-                        <form action="">
-                            <label for="half_month">Filter: </label>&nbsp;&nbsp;&nbsp;
+                        <form action="test" method="post">
+                            <label for="half_month">Filters: </label>&nbsp;&nbsp;&nbsp;
                             <select name="half_month" id="half_month" class="input input-sm half_month">
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                             </select>&nbsp;&nbsp;
                             <select name="month" id="month" class="input input-sm monthName">
-                                <option value="January">January</option>
-                                <option value="February">February</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                                <option value="May">May</option>
-                                <option value="June">June</option>
-                                <option value="July">July</option>
-                                <option value="August">August</option>
-                                <option value="September">September</option>
-                                <option value="October">October</option>
-                                <option value="November">November</option>
-                                <option value="December">December</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
                             </select>&nbsp;&nbsp;
                             <select name="year" id="year" class="input input-sm year">
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
                                 <option value="2020">2020</option>
-                                <option value="2021">2021</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
                             </select>&nbsp;&nbsp;
                             <select name="empName" id="name" class="input input-sm empName">
                                 <option value="employeeID">Anunciacion Maricris Joy</option>
@@ -70,7 +69,7 @@
                                 <option value="employeeID">Lawag Marjun</option>
                                 <option value="employeeID">Ceniza Joel Jr.</option>
                             </select>&nbsp;&nbsp;
-                            <button type="button" class="btn btn-sm btn-primary">GO</button>
+                            <button type="submit" class="btn btn-sm btn-primary" >GO</button>
                         </form>
                     </div>
                     <span class="date_time">
@@ -394,6 +393,21 @@
         </div>
     </div>
 
+    <?php
+    $date = '2003-09-01';
+    $end = '2003-09-' . date('t', strtotime($date)); //get end date of month
 
+    ?>
+    <table>
+        <tr>
+            <?php while(strtotime($date) <= strtotime($end)) {
+                $day_num = date('d', strtotime($date));
+                $day_name = date('l', strtotime($date));
+                $date = date("Y-m-d", strtotime("+1 day", strtotime($date)));
+                echo "<td>$day_num <br/> $day_name<br/> $date</td>";
+            }
+            ?>
+        </tr>
+    </table>
 
 </div>

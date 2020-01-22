@@ -81,6 +81,11 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="payroll">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Payroll</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
