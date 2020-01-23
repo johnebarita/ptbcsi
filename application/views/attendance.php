@@ -23,7 +23,6 @@
                             </tbody>
                         </table>
                         <br>
-
                         <form action="attendance" method="post">
                             <label for="half_month">Filter: </label>&nbsp;&nbsp;&nbsp;
                             <select name="half_month" id="half_month" class="input input-sm half_month">
