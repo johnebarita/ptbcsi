@@ -129,4 +129,9 @@ class Home extends CI_Controller
         $data['page_load'] = 'employees_leave_requests';
         $this->load->view('includes/template', $data);
     }
+    public function overtime()
+    {
+        $data['page_load'] = 'overtime';
+        $this->load->view('includes/template', $data);
+    }
 }

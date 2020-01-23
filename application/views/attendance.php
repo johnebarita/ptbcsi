@@ -116,7 +116,7 @@
 
             </div>
             <div class="table-responsive">
-                <table id="attendance" class="table table-sm table-bordered">
+                <table id="attendance" class="table table-bordered">
                     <thead>
                     <tr>
                         <th colspan="2" class=" text_center border-left">Half-Month</th>

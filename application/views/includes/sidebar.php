@@ -53,7 +53,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Employee Management:</h6>
                 <a class="collapse-item" href="employee_list">Employee List</a>
-                <a class="collapse-item" href="">Overtime</a>
+                <a class="collapse-item" href="overtime">Overtime</a>
                 <a class="collapse-item" href="">Cash Advance</a>
                 <a class="collapse-item" href="">Schedules</a>
                 <a class="collapse-item" href="leave_requests">Leave Requests</a>

@@ -8,15 +8,15 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
-        information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
-            DataTables documentation</a>.</p>
+    <h1 class="h3 mb-2 text-gray-800">Employee Lists</h1>
+<!--    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more-->
+<!--        information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official-->
+<!--            DataTables documentation</a>.</p>-->
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Employee Lists</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><strong>TDZ / </strong>Employee Lists</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -505,68 +505,55 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body mod">
-                    <!--                    <form>-->
-                    <!--                        <div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Firstname: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="username">-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                        <div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Lastname: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div>-->
-                    <!--                        <div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Address: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div><div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Birthdate: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div><div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Contact Info: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div><div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Gender: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div><div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Position: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div><div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Schedule: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div><div class="input-group form-group">-->
-                    <!--                            <div class="input-group-prepend">-->
-                    <!--                                <span class="input-group-text">Date Hired: </span>-->
-                    <!--                            </div>-->
-                    <!--                            <input type="text" class="form-control" placeholder="password">-->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                    </form>-->
-                    <label for="fname">Firstname: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="names input-group"><br>
-                    <label for="lname">Lastname: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="names"><br>
-                    <label for="address">Address: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="address"><br>
-                    <label for="bdate">Birthdate: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="bdate"><br>
-                    <label for="con">Contact Info: </label>&nbsp;&nbsp;<input type="text" class="con"><br>
-                    <label for="gender">Gender: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="gender"><br>
-                    <label for="position">Position: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="position"><br>
-                    <label for="sched">Schedule: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="sched"><br>
-                    <label for="dhired">Date Hired: </label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="dhired">
+                    <div class="card">
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 pt-0 border">
+                            <br>
+                            <form method="post" action="">
+                                <div class="form-group">
+                                    <label for="fname">Firstname </label>
+                                    <input type="text" class="form-control" id="fname" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname">Lastname </label>
+                                    <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                                </div>
+                                <div>
+                                    <div class="form-group">
+                                        <label for="address">Address </label>
+                                        <input type="text" class="form-control" id="adres" placeholder="Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bdate">Birthdate </label>
+                                        <input type="text" class="form-control" id="bdate" placeholder="mm / dd / yy">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="con">Contact Info </label>
+                                    <input type="text" class="form-control" id="num" placeholder="Phone No.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender </label>
+                                    <input type="text" class="form-control" id="gender" placeholder="Gender">
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Position </label>
+                                    <input type="text" class="form-control" id="position" placeholder="Position">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sched">Schedule </label>
+                                    <input type="text" class="form-control" id="sched" placeholder="Schedule">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dhired">Date Hired </label>
+                                    <input type="text" class="form-control" id="dhired" placeholder="Date Hired">
+                                </div>
+                            </form>
+                            <!-- Form -->
+                        </div>
+                    </div>
                 </div>
 
                 <div class="modal-footer">

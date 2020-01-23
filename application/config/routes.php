@@ -60,6 +60,7 @@ $route['card'] = 'home/card';
 $route['color'] = 'home/color';
 $route['border'] = 'home/border';
 $route['animation'] = 'home/animation';
+$route['overtime'] = 'home/overtime';
 $route['other'] = 'home/other';
 $route['payroll'] = 'home/payroll';
 $route['test'] = 'attendancecontroller/test';
