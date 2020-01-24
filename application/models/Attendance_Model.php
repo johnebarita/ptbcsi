@@ -43,4 +43,11 @@ class Attendance_Model extends CI_Model
             ->result();
         return $result;
     }
+    public function addEmployee($firstname,$lastname,$address,$birthdate,$contact,$gender,$position,$schedule,$datehired)
+    {
+        $query="insert into add_employee values('','$firstname','$lastname','$address','$birthdate','$contact','$gender','$position','$schedule','$datehired')";
+        $this->db->query($query);
+
+        return $query;
+    }
 }

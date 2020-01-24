@@ -16,7 +16,7 @@ class Home extends CI_Controller
 
     }
 
-    public function attendance()
+    public function dtr()
     {
         if (isset($_POST['month'])) {
             $month = $_POST['month'];
@@ -59,7 +59,7 @@ class Home extends CI_Controller
         }
 
 
-        $data['page_load'] = 'attendance';
+        $data['page_load'] = 'dtr';
         $data['days'] = $days;
         $data['time'] = $time_data;
         $data['half_month'] = $half_month;
