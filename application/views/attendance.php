@@ -23,51 +23,44 @@
                             </tbody>
                         </table>
                         <br>
+
                         <form action="attendance" method="post">
                             <label for="half_month">Filter: </label>&nbsp;&nbsp;&nbsp;
                             <select name="half_month" id="half_month" class="input input-sm half_month">
-
-                                <option value="A" <?php if($half_month =='A'){echo 'selected';}?>>A</option>
-                                <option value="B" <?php if($half_month =='B'){echo 'selected';}?>>B</option>
+                                <option value="A" <?=($half_month =='A' ?'selected':'');?>>A</option>
+                                <option value="B" <?=($half_month =='B' ?'selected':'')?>>B</option>
                             </select>&nbsp;&nbsp;
                             <select name="month" id="month" class="input input-sm monthName">
-                                <option value="1" <?php if($month =='January'){echo 'selected';}?>>January</option>
-                                <option value="2" <?php if($month =='February'){echo 'selected';}?>>February</option>
-                                <option value="3" <?php if($month =='March'){echo 'selected';}?>>March</option>
-                                <option value="4" <?php if($month =='April'){echo 'selected';}?>>April</option>
-                                <option value="5" <?php if($month =='May'){echo 'selected';}?>>May</option>
-                                <option value="6" <?php if($month =='June'){echo 'selected';}?>>June</option>
-                                <option value="7" <?php if($month =='July'){echo 'selected';}?>>July</option>
-                                <option value="8" <?php if($month =='August'){echo 'selected';}?>>August</option>
-                                <option value="9" <?php if($month =='September'){echo 'selected';}?>>September</option>
-                                <option value="10" <?php if($month =='October'){echo 'selected';}?>>October</option>
-                                <option value="11" <?php if($month =='November'){echo 'selected';}?>>November</option>
-                                <option value="12" <?php if($month  =='December'){echo 'selected';}?>>December</option>
+                                <option value="01" <?=($month =='January' ?'selected':'')?>>January</option>
+                                <option value="02" <?=($month =='February' ?'selected':'')?>>February</option>
+                                <option value="03" <?=($month =='March' ?'selected':'')?>>March</option>
+                                <option value="04" <?=($month =='April' ?'selected':'')?>>April</option>
+                                <option value="05" <?=($month =='May' ?'selected':'')?>>May</option>
+                                <option value="06" <?=($month =='June' ?'selected':'')?>>June</option>
+                                <option value="07" <?=($month =='July' ?'selected':'')?>>July</option>
+                                <option value="08" <?=($month =='August' ?'selected':'')?>>August</option>
+                                <option value="09" <?=($month =='September' ?'selected':'')?>>September</option>
+                                <option value="10" <?=($month =='October' ?'selected':'')?>>October</option>
+                                <option value="11" <?=($month =='November' ?'selected':'')?>>November</option>
+                                <option value="12" <?=($month =='December' ?'selected':'')?>>December</option>
+                                <option value="12" <?=($month =='December' ?'selected':'')?>>December</option>
                             </select>&nbsp;&nbsp;
+
                             <select name="year" id="year" class="input input-sm year">
-                                <option value="2020" <?php if($year =='2020'){echo 'selected';}?>>2020</option>
-                                <option value="2019" <?php if($year =='2019'){echo 'selected';}?>>2019</option>
-                                <option value="2018" <?php if($year =='2018'){echo 'selected';}?>>2018</option>
-                                <option value="2017" <?php if($year =='2017'){echo 'selected';}?>>2017</option>
-                                <option value="2016" <?php if($year =='2016'){echo 'selected';}?>>2016</option>
-                                <option value="2015" <?php if($year =='2015'){echo 'selected';}?>>2015</option>
-                                <option value="2014" <?php if($year =='2014'){echo 'selected';}?>>2014</option>
-                                <option value="2013" <?php if($year =='2013'){echo 'selected';}?>>2013</option>
-                                <option value="2012" <?php if($year =='2012'){echo 'selected';}?>>2012</option>
+                                <option value="2020" <?=($year =='2020' ?'selected':'')?>>2020</option>
+                                <option value="2019" <?=($year =='2019' ?'selected':'')?>>2019</option>
+                                <option value="2018" <?=($year =='2018' ?'selected':'')?>>2018</option>
+                                <option value="2017" <?=($year =='2017' ?'selected':'')?>>2017</option>
+                                <option value="2016" <?=($year =='2016' ?'selected':'')?>>2016</option>
+                                <option value="2015" <?=($year =='2015' ?'selected':'')?>>2015</option>
+                                <option value="2014" <?=($year =='2014' ?'selected':'')?>>2014</option>
+                                <option value="2013" <?=($year =='2013' ?'selected':'')?>>2013</option>
+                                <option value="2012" <?=($year =='2012' ?'selected':'')?>>2012</option>
                             </select>&nbsp;&nbsp;
-                            <select name="empName" id="name" class="input input-sm empName">
-                                <option value="employeeID">Anunciacion Maricris Joy</option>
-                                <option value="employeeID">Astillero Gelyn</option>
-                                <option value="employeeID">Boiser Mariel</option>
-                                <option value="employeeID">Ebarita John Regy</option>
-                                <option value="employeeID">Opora Kerr</option>
-                                <option value="employeeID">Rondina Noel</option>
-                                <option value="employeeID">Song Horace</option>
-                                <option value="employeeID">Castillon Kyle</option>
-                                <option value="employeeID">Lesana Mica</option>
-                                <option value="employeeID">Marcillana Nicka</option>
-                                <option value="employeeID">Lawag Marjun</option>
-                                <option value="employeeID">Ceniza Joel Jr.</option>
+                            <select name="id" id="id" class="input input-sm empName">
+                                    <?php foreach ($users as $user){?>
+                                <option value="<?=$user->id?>" ><?=$user->last_name.' '.$user->name?></option>
+                                <?php }?>
                             </select>&nbsp;&nbsp;
                             <button type="submit" class="btn btn-sm btn-primary">GO</button>
                         </form>
@@ -116,7 +109,7 @@
 
             </div>
             <div class="table-responsive">
-                <table id="attendance" class="table table-bordered">
+                <table id="attendance" class="table table-sm table-bordered">
                     <thead>
                     <tr>
                         <th colspan="2" class=" text_center border-left">Half-Month</th>
@@ -146,24 +139,45 @@
                     </tr>
                     </thead>
                     <tbody>
-
-                    <?php foreach ($days as $day){ ?>
+                    <?php $i;$j=0; for($i=0;$i<count($days);$i++){?>
                     <tr>
-                        <td width="40"><?php echo $day[0]; ?></td>
-                        <td width="80"><?php echo $day[1];?></td>
-                        <td align="center"><?php echo $time[0]; ?></td>
-                        <td class="text_center"><?php echo $time[1]; ?></td>
-                        <td class="text_center"><?php echo $time[2]; ?></td>
-                        <td class="text_center"><?php echo $time[3]; ?></td>
-                        <td class="text_center"><?php echo $time[4]; ?></td>
-                        <td class="text_center"><?php echo $time[5]; ?></td>
-                        <td class="text_center"><?php echo $time[6]; ?></td>
-                        <td class="text_center"><?php echo $time[7]; ?></td>
-                        <td class="text_center"><?php echo $time[8]; ?></td>
-                        <td class="text_center"><?php echo $time[9]; ?></td>
-                        <td class="text_center"><?php echo $time[10]; ?></td>
-                        <td class="text_center"><?php echo $time[11]; ?></td>
-                    <?php } ?>
+                        <td width="40"><?=$days[$i][0]?></td>
+                        <td width="40"><?=$days[$i][1]?></td>
+
+                        <?php if($days[$i][0]!=date('d',strtotime($time[$j]->date))){?>
+                        <td class="text_center" colspan="12">ABSENT</td>
+                        <?php }else{?>
+                        <td align="center">
+                            <input value="<?= ($time[$j]->morning_in_hour ?? ''); ?>" style="width: 30px;text-align: center;border: 0">:
+                            <input value="<?= ($time[$j]->morning_in_minute ??''); ?>" style="width: 30px;text-align: center;border: 0">
+                        </td>
+                        <td align="center">
+                            <input value="<?= ($time[$j]->morning_out_hour ?? ''); ?>" style="width: 30px;text-align: center;border: 0">:
+                            <input value="<?= ($time[$j]->morning_out_minute ?? ''); ?>" style="width: 30px;text-align: center;border: 0">
+                        </td>
+                        <td class="text_center"><?=($time[$j]->morning_time ?? ''); ?></td>
+                        <td align="center" ><input value="<?=$time[$j]->afternoon_in_hour; ?>" style="width: 30px;text-align: center;border: 0">
+                            <input value="<?=$time[$j]->afternoon_in_minute; ?>" style="width: 30px;text-align: center;border: 0">
+                        </td>
+                        <td align="center" ><input value="<?=$time[$j]->afternoon_out_hour; ?>" style="width: 30px;text-align: center;border: 0">
+                            <input value="<?=$time[$j]->afternoon_out_minute; ?>" style="width: 30px;text-align: center;border: 0">
+                        </td>
+                        <td class="text_center"><?= $time[$j]->afternoon_in_hour; ?></td>
+                        <td class="text_center"><?= $time[$j]->afternoon_in_minute; ?></td>
+                        <td class="text_center"><?= $time[$j]->afternoon_time; ?></td>
+                        <td class="text_center"><?= $time[$j]->over_in_hour; ?></td>
+                        <td class="text_center"><?= $time[$j]->over_in_hour; ?></td>
+                        <td class="text_center"><?= $time[$j]->over_time; ?></td>
+                        <td class="text_center"></td>
+                        <?php ($j<count($time)-1 ? $j++ : $j)?>
+                    <?php }}?>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" colspan="11">Total:</td>
+                        <td class="text_center"></td>
+                        <td class="text_center"></td>
+                        <td class="text_center"></td>
                     </tr>
                     </tbody>
                 </table>

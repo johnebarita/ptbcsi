@@ -55,7 +55,7 @@
                 <a class="collapse-item" href="employee_list">Employee List</a>
                 <a class="collapse-item" href="overtime">Overtime</a>
                 <a class="collapse-item" href="">Cash Advance</a>
-                <a class="collapse-item" href="">Schedules</a>
+                <a class="collapse-item" href="schedule">Schedules</a>
                 <a class="collapse-item" href="leave_requests">Leave Requests</a>
                 <a class="collapse-item" href="button">Buttons</a>
                 <a class="collapse-item" href="card">Cards</a>
@@ -77,6 +77,7 @@
                 <a class="collapse-item" href="border">Borders</a>
                 <a class="collapse-item" href="animation">Animations</a>
                 <a class="collapse-item" href="other">Other</a>
+                <a class="collapse-item" href="position">Position</a>
             </div>
         </div>
     </li>

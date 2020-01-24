@@ -22,20 +22,22 @@ class Home extends CI_Controller
             $month = $_POST['month'];
             $half_month = $_POST['half_month'];
             $year = $_POST['year'];
+            $user_id= $_POST['id'];
         } else {
-            $month = date('m', strtotime(date('y-m-d')));
-            $year = date('y', strtotime(date('y-m-d')));
+            $month = date('m', strtotime(date('y-m-dd')));
+            $year = date('y', strtotime(date('y-m-dd')));
             $half_month = 'A';
-            if (date('d', strtotime(date('y-m-d'))) > 15) {
+            if (date('d', strtotime(date('y-m-dd'))) > 15) {
                 $half_month = 'B';
             }
+            $user_id=0;
         }
 
 
         $start_day = $year . "-" . $month;
         $end_day = $start_day;
         if ($half_month == 'A') {
-            $start_day .= '-1';
+            $start_day .= '-01';
             $end_day .= -'15';
         } else {
             $start_day .= '-16';
@@ -44,9 +46,11 @@ class Home extends CI_Controller
 
 
         $days = array();
-        $time_data = array("8:00", "12:00", "4", "1:00", "5:00", "4", "", "", "", "8", "", "");
         $month_name = date('F', strtotime($start_day));
 
+        $this->load->model('attendance_model');
+        $time_data = $this->attendance_model->getAttendance($user_id,$start_day,$end_day);
+        $users = $this->attendance_model->getUsers();
         while (strtotime($start_day) <= strtotime($end_day)) {
             $day_num = date('d', strtotime($start_day));
             $day_name = date('D', strtotime($start_day));
@@ -54,12 +58,14 @@ class Home extends CI_Controller
             $days[] = array($day_num, $day_name);
         }
 
+
         $data['page_load'] = 'attendance';
         $data['days'] = $days;
         $data['time'] = $time_data;
         $data['half_month'] = $half_month;
         $data['month'] = $month_name;
         $data['year'] = $year;
+        $data['users']=$users;
         $this->load->view('includes/template', $data);
 
     }
@@ -132,6 +138,21 @@ class Home extends CI_Controller
     public function overtime()
     {
         $data['page_load'] = 'overtime';
+        $this->load->view('includes/template', $data);
+    }
+    public function schedule()
+    {
+        $data['page_load'] = 'schedule';
+        $this->load->view('includes/template', $data);
+    }
+    public function position()
+    {
+        $data['page_load'] = 'position';
+        $this->load->view('includes/template', $data);
+    }
+    public function cashAdvance()
+    {
+        $data['page_load'] = 'cashAdvance';
         $this->load->view('includes/template', $data);
     }
 }

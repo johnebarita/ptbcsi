@@ -9,19 +9,15 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Employee Lists</h1>
-<!--    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more-->
-<!--        information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official-->
-<!--            DataTables documentation</a>.</p>-->
 
-    <!-- DataTales Example -->
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><strong>TDZ / </strong>Employee Lists</h6>
+            <input type="button" class="btn btn-facebook" value="Add Employee" data-toggle="modal" data-target="#addEmp">
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <input type="button" class="btn btn-facebook" value="Add Employee" data-toggle="modal" data-target="#addEmp"><br><br>
-
+                
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
@@ -511,54 +507,69 @@
                         <!--Card content-->
                         <div class="card-body px-lg-5 pt-0 border">
                             <br>
-                            <form method="post" action="">
-                                <div class="form-group">
-                                    <label for="fname">Firstname </label>
-                                    <input type="text" class="form-control" id="fname" placeholder="First Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="lname">Lastname </label>
-                                    <input type="text" class="form-control" id="lname" placeholder="Last Name">
-                                </div>
-                                <div>
-                                    <div class="form-group">
-                                        <label for="address">Address </label>
-                                        <input type="text" class="form-control" id="adres" placeholder="Address">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="bdate">Birthdate </label>
-                                        <input type="text" class="form-control" id="bdate" placeholder="mm / dd / yy">
+                            <form action="">
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-4 col-form-label">First Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="fname">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="con">Contact Info </label>
-                                    <input type="text" class="form-control" id="num" placeholder="Phone No.">
+                                <div class="form-group row">
+                                    <label for="lname" class="col-sm-4 col-form-label">Last Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="lname">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="gender">Gender </label>
-                                    <input type="text" class="form-control" id="gender" placeholder="Gender">
+                                <div class="form-group row">
+                                    <label for="address" class="col-sm-4 col-form-label">Address</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="address">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="position">Position </label>
-                                    <input type="text" class="form-control" id="position" placeholder="Position">
+                                <div class="form-group row">
+                                    <label for="bdate" class="col-sm-4 col-form-label">Birthdate</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="bdate">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="sched">Schedule </label>
-                                    <input type="text" class="form-control" id="sched" placeholder="Schedule">
+                                <div class="form-group row">
+                                    <label for="num" class="col-sm-4 col-form-label">Contact No.</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="num">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="dhired">Date Hired </label>
-                                    <input type="text" class="form-control" id="dhired" placeholder="Date Hired">
+                                <div class="form-group row">
+                                    <label for="gender" class="col-sm-4 col-form-label">Gender</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="gender">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="position" class="col-sm-4 col-form-label">Position</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="position">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="sched" class="col-sm-4 col-form-label">Schedule</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="sched">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="hired" class="col-sm-4 col-form-label">Date Hired</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="hired">
+                                    </div>
                                 </div>
                             </form>
-                            <!-- Form -->
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary">Add Employee</button>
                 </div>
             </div>
         </div>
