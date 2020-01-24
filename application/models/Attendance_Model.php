@@ -16,38 +16,36 @@ class Attendance_Model extends CI_Model
     public function getTest()
     {
         $res = $this->db->select('*')
-                        ->from('tbl_loginsheet')
-                        ->where('staff_id','307')
-                        ->where("date between '"."2019-09-01'"." and "."'2019-09-15'")
-                        ->get();
+            ->from('tbl_loginsheet')
+            ->where('staff_id', '307')
+            ->where("date between '" . "2019-09-01'" . " and " . "'2019-09-15'")
+            ->get();
         return $res->result();
     }
-    public function getAttendance($user_id,$start_day,$end_day)
+
+    public function getAttendance($user_id,$start_day, $end_day)
     {
-        $result = $this->db->select('*')
+        $res = $this->db->select('*')
             ->from('tbl_loginsheet')
-            ->where('staff_id',$user_id)
-            ->where('date between "'.$start_day.'" and "'.$end_day.'"')
+            ->where('staff_id', $user_id)
+            ->where('date between "' . $start_day . '" and "' . $end_day . '"')
             ->get()
             ->result();
-        return $result;
+        return $res;
     }
-    public function getUsers(){
+
+    public function getUsers()
+    {
+        $type = array('7','2','16','4');
         $result = $this->db->select('*')
             ->from('tbl_user')
+            ->where_in('account_type',$type)
             ->where('stillworking',1)
-            ->where('account_type','7,4,16,2')
-            ->where('last_name','is not nul')
-            ->order_by('last_name')
+            ->where('isarchived',0)
+            ->where('last_name IS NOT NULL')
+            ->order_by('last_name','asc')
             ->get()
             ->result();
         return $result;
-    }
-    public function addEmployee($firstname,$lastname,$address,$birthdate,$contact,$gender,$position,$schedule,$datehired)
-    {
-        $query="insert into add_employee values('','$firstname','$lastname','$address','$birthdate','$contact','$gender','$position','$schedule','$datehired')";
-        $this->db->query($query);
-
-        return $query;
     }
 }

@@ -25,7 +25,7 @@
                             </tbody>
                         </table>
                         <br>
-                        <form action="dtr" method="post">
+                        <form action="attendance" method="post">
                             <label for="half_month">Filter: </label>&nbsp;&nbsp;&nbsp;
                             <select name="half_month" id="half_month" class="input input-sm half_month">
                                 <option value="A" <?= ($half_month == 'A' ? 'selected' : ''); ?>>A</option>
@@ -66,40 +66,40 @@
                     </div>
                     <span class="date_time">
                         <span class="time">
-                            <span class="iconn"><i class="fa fa-clock icon">&nbsp;&nbsp;&nbsp;</i>Time: </span>
+                            <span><i class="fa fa-clock">&nbsp;&nbsp;&nbsp;</i>Time: </span>
                         </span>
-                        <span class="iconn"><i class="fa fa-calendar icon">&nbsp;&nbsp;&nbsp;</i>Date: </span>
+                        <span><i class="fa fa-calendar">&nbsp;&nbsp;&nbsp;</i>Date: </span>
                     </span>
                 </div>
             </div>
-            <div class="details iconn">
+            <div class="details">
                 <div class="rh tb_rh text_center">
                     <span class="show_leave_details">Leave:
-                        <span class="text-primary">___</span>
+                        <span class="text-primary">sdfsf</span>
                         <div style="display: none;">
                             <span class="width-200"></span>
                         </div>
                     </span>&nbsp;&nbsp;&nbsp;
                     <span class="show_absent">Absent:
-                        <span class="text-primary">___</span>
+                        <span class="text-primary"></span>
                         <div style="display: none;">
                             <span class="width-200"></span>
                         </div>
                     </span>&nbsp;&nbsp;&nbsp;
-                    <span >Over Time:
-                        <span class="text-primary">___</span>
+                    <span>Over Time:
+                        <span class="text-primary"></span>
                         <div style="display: none">
                             <span class="width-200"></span>
                         </div>
                     </span>&nbsp;&nbsp;&nbsp;
                     <span>Under Time:
-                        <span class="text-primary">___</span>
+                        <span class="text-primary"></span>
                         <div style="display: none">
                             <span class="width-200"></span>
                         </div>
                     </span>&nbsp;&nbsp;&nbsp;
                     <span>Late:
-                        <span class="text-primary">___</span>
+                        <span class="text-primary"></span>
                         <div style="display: none">
                             <span class="width-200"></span>
                         </div>
@@ -261,3 +261,4 @@
         </div>
     </div>
 </div>
+

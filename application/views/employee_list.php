@@ -9,10 +9,6 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
-        information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
-            DataTables documentation</a>.</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -35,17 +31,14 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     <tr>
-                        <td class="text-center">23</td>
+                        <td class="text-center"></td>
                         <td>Mara Anunciacion</td>
                         <td>CEO</td>
                         <td></td>
                         <td>Member Since</td>
-<!--                        <td>--><?php //echo $row->employee_id;?><!--</td>-->
-<!--                        <td>--><?php //echo $row->employee_name;?><!--</td>-->
-<!--                        <td>--><?php //echo $row->position;?><!--</td>-->
-<!--                        <td>--><?php //echo $row->schedule; ?><!--</td>-->
-<!--                        <td>--><?php //echo $row->datehired; ?><!--</td>-->
+
                         <td class="text-center text_center">
                             <i class="btn btn-info fa fa-edit iconedit" data-toggle="modal" data-target="#employeeEdit">&nbsp;&nbsp;Edit</i>&nbsp;&nbsp;&nbsp;
                             <i class="btn btn-danger fa fa-trash-alt icondelete" data-toggle="modal" data-target="#employeeDelete">&nbsp;&nbsp;Delete</i>

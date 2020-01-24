@@ -9,8 +9,10 @@
 class Home extends CI_Controller
 {
 
+
     public function index()
     {
+
         $data['page_load'] = 'dashboard';
         $this->load->view('includes/template', $data);
 
@@ -18,11 +20,12 @@ class Home extends CI_Controller
 
     public function dtr()
     {
+
         if (isset($_POST['month'])) {
             $month = $_POST['month'];
             $half_month = $_POST['half_month'];
             $year = $_POST['year'];
-            $user_id= $_POST['id'];
+            $user_id = $_POST['user_id'];
         } else {
             $month = date('m', strtotime(date('y-m-dd')));
             $year = date('y', strtotime(date('y-m-dd')));
@@ -30,8 +33,9 @@ class Home extends CI_Controller
             if (date('d', strtotime(date('y-m-dd'))) > 15) {
                 $half_month = 'B';
             }
-            $user_id=0;
+            $user_id =0;
         }
+
 
 
         $start_day = $year . "-" . $month;
@@ -49,8 +53,9 @@ class Home extends CI_Controller
         $month_name = date('F', strtotime($start_day));
 
         $this->load->model('attendance_model');
-        $time_data = $this->attendance_model->getAttendance($user_id,$start_day,$end_day);
         $users = $this->attendance_model->getUsers();
+        $time_data = $this->attendance_model->getAttendance($user_id,$start_day,$end_day);
+
         while (strtotime($start_day) <= strtotime($end_day)) {
             $day_num = date('d', strtotime($start_day));
             $day_name = date('D', strtotime($start_day));
@@ -65,13 +70,18 @@ class Home extends CI_Controller
         $data['half_month'] = $half_month;
         $data['month'] = $month_name;
         $data['year'] = $year;
-        $data['users']=$users;
+        $data['users'] = $users;
+        $data['user_id'] = $user_id;
         $this->load->view('includes/template', $data);
 
     }
 
     public function employee_list()
     {
+        $this->load->model('attendance_model');
+        $users = $this->attendance_model->getUsers();
+
+        $data['users'] = $users;
         $data['page_load'] = 'employee_list';
         $this->load->view('includes/template', $data);
     }
