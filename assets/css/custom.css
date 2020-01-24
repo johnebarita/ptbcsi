@@ -134,4 +134,17 @@
     border: solid blue;
 }
 
+.sunday, .sunday input, .sunday td {
+    background-color: #FFCCCC;
+}
+
+.absent{
+    font-weight: bold;
+    margin-left: -190px;
+    font-style: italic;
+    color: red;
+    letter-spacing: 20px;
+/*text-align: center;*/
+}
+
 
