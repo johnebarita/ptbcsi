@@ -19,13 +19,15 @@
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-2">
+    <hr class="sidebar-divider my-0">
+    <br>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider my-0">
 
     <!-- Heading -->
     <div class="sidebar-heading">
+        <br>
         REPORTS
     </div>
 
@@ -33,7 +35,7 @@
 <!--    <hr class="sidebar-divider my-2">-->
 
     <!-- Divider -->
-<!--    <hr class="sidebar-divider my-0">-->
+    <hr class="sidebar-divider my-1">
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
@@ -143,10 +145,11 @@
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-2">
+    <hr class="sidebar-divider my02">
+
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+<!--    <hr class="sidebar-divider">-->
 
     <!-- Nav Item - Utilities Collapse Menu -->
 <!--    <li class="nav-item">-->
@@ -210,7 +213,7 @@
 <!--    </li>-->
 
     <!-- Divider -->
-<!--    <hr class="sidebar-divider d-none d-md-block">-->
+    <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

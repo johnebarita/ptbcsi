@@ -48,4 +48,22 @@ class Attendance_Model extends CI_Model
             ->result();
         return $result;
     }
+    public function addEmployee($firstname,$lastname,$address,$birthdate,$contact,$gender,$position,$schedule,$datehired)
+    {
+        $query="insert into add_employee values('','$firstname','$lastname','$address','$birthdate','$contact','$gender','$position','$schedule','$datehired')";
+        $this->db->query($query);
+
+        return $query;
+    }
+
+//    private $event = 'event';
+//
+//    function get_event_list() {
+//        $this->db->select("id, title, url, class, UNIX_TIMESTAMP(start_date)*1000 as start, UNIX_TIMESTAMP(end_date)*1000 as end");
+//        $query = $this->db->get($this->event);
+//        if ($query) {
+//            return $query->result();
+//        }
+//        return NULL;
+//    }
 }

@@ -8,6 +8,42 @@
  */
 class Home extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('url','html','form'));
+        // load Pagination library
+        $this->load->library('pagination');
+        $this->load->library('session');
+        $this->load->database();
+
+        // load URL helper
+        $this->load->helper('url');
+        $this->load->model('Attendance_Model');
+    }
+
+    public function addEmployee()
+    {
+        //Check submit button
+        if(isset($_POST['addEmployee'])) {
+            //get form's data and store in local variable
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $address = $_POST['address'];
+            $birthdate = $_POST['birthdate'];
+            $contact = $_POST['contact'];
+            $gender = $_POST['gender'];
+            $position = $_POST['position'];
+            $schedule = $_POST['schedule'];
+            $datehired = $_POST['datehired'];
+
+            $employees = $this->Attendance_Model->addEmployee($firstname,$lastname,$address,$birthdate,$contact,$gender,$position,$schedule,$datehired);
+
+            //call addEmployee method of Attendance_Model and pass variables as parameter
+            redirect(base_url('employee_list', $employees));
+        }
+
+    }
 
 
     public function index()
@@ -15,6 +51,7 @@ class Home extends CI_Controller
 
         $data['page_load'] = 'dashboard';
         $this->load->view('includes/template', $data);
+//        $this->load->view('Calendar');
 
     }
 
@@ -165,4 +202,13 @@ class Home extends CI_Controller
         $data['page_load'] = 'cashAdvance';
         $this->load->view('includes/template', $data);
     }
+
+//    public function load_data() {
+//        $events = $this->em->get_event_list();
+//        if($events !== NULL) {
+//            echo json_encode(array('success' => 1, 'result' => $events));
+//        } else {
+//            echo json_encode(array('success' => 0, 'error' => 'Event not found'));
+//        }
+//    }
 }
