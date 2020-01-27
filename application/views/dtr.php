@@ -1,4 +1,5 @@
 <link href="assets/css/custom.css" rel="stylesheet">
+<link href="../assets/css/custom.css" rel="stylesheet">
 <div class="container-fluid">
     <!--    <h1 class="h3 mb-4 text-gray-800">Attendance - TODO ( Mariel) </h1>-->
 
@@ -14,17 +15,6 @@
             <div class="sec_head">
                 <div class="row">
                     <div class="col-md-6">
-                        <table class="filter">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <input type="text" name="search_text_reports" id="search_text_reports"
-                                           placeholder="Search Employee" class="form-control"/>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
                         <form action="dtr" method="post">
                             <label for="half_month">Filter: </label>&nbsp;&nbsp;&nbsp;
                             <select name="half_month" id="half_month" class="input input-sm half_month">
@@ -140,7 +130,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $i;$j = 0;for ($i = 0;$i < count($days); $i++): ?>
+                    <?php $j = 0;$total_time = 0; $total_ot=0?>
+                    <?php $i;for ($i = 0;$i < count($days); $i++): ?>
                     <tr class=" <?=($days[$i][1]=='Sun'? 'sunday':'')?>">
                         <td width="40"><?= $days[$i][0] ?></td>
                         <td width="40"><?= $days[$i][1] ?></td>
@@ -188,16 +179,7 @@
                             <input value="<?= ($time[$j]->morning_out_minute ?? ''); ?>"
                                    style="width: 30px;text-align: center;border: 0">
                         </td>
-                        <td class="text_center">
-                            <?php
-                                $start_date = new DateTime($time[$j]->morning_in_hour.'.'.$time[$j]->morning_in_minute.'.00');
-                                $end_date = new DateTime($time[$j]->morning_out_hour.'.'.$time[$j]->morning_out_minute.'.00');
-                                $interval = $start_date->diff($end_date);
-                                $hours   = $interval->format('%h');
-                                $minutes = $interval->format('%i');
-                                echo  round((($hours * 60 + $minutes)/60),2);
-                            ?>
-                        </td>
+                        <td class="text_center"><?=($time[$j]->morning_time??'')?> </td>
                         <td align="center">
                             <input value="<?= $time[$j]->afternoon_in_hour; ?>"
                                    style="width: 30px;text-align: center;border: 0">:
@@ -210,16 +192,7 @@
                             <input value="<?= $time[$j]->afternoon_out_minute; ?>"
                                    style="width: 30px;text-align: center;border: 0">
                         </td>
-                        <td class="text_center">
-                            <?php
-                                $start_date = new DateTime($time[$j]->afternoon_in_hour.'.'.$time[$j]->afternoon_in_minute.'.00');
-                                $end_date = new DateTime($time[$j]->afternoon_out_hour.'.'.$time[$j]->afternoon_out_minute.'.00');
-                                $interval = $start_date->diff($end_date);
-                                $hours   = $interval->format('%h');
-                                $minutes = $interval->format('%i');
-                            echo  round((($hours * 60 + $minutes)/60),2);
-                            ?>
-                        </td>
+                        <td class="text_center"><?=($time[$j]->afternoon_time??'')?> </td>
                         <td align="center">
                             <input value="<?= $time[$j]->over_in_hour; ?>"
                                        style="width: 30px;text-align: center;border: 0">:
@@ -233,26 +206,52 @@
                                    style="width: 30px;text-align: center;border: 0">
                         </td>
                         <td class="text_center">
+
+                        <td class="text_center">
+                            <?php
+                                if($time[$j]->afternoon_time!=null&&$time[$j]->morning_time!=null){}{
+                                    $pre = $time[$j]->afternoon_time+$time[$j]->morning_time;
+                                    if($pre>=8){
+                                        echo '8';
+                                        $total_time +=8;
+                                    }else if($pre>0){
+                                        echo $pre;
+                                        $total_time+=$pre;                                    }
+                                }
+                            ?>
+                        </td>
+                        <td class="text_center">
+                            <?php
+                                if($time[$j]->afternoon_time!=null&&$time[$j]->morning_time!=null){}{
+                                    $pre = $time[$j]->afternoon_time+$time[$j]->morning_time;
+                                    if($pre>=8){
+                                        $pre-=8;
+                                        echo  $pre+$time[$j]->over_time;
+                                        $total_ot +=$pre+$time[$j]->over_time;
+                                    }
+                                }
+                            ?>
+                        </td>
+                        <td class="text_center">
 <!--                            --><?php
-//                            $start_date = new DateTime($time[$j]->over_in_hour.'.'.$time[$j]->over_in_minute.'.00');
-//                            $end_date = new DateTime($time[$j]->over_out_hour.'.'.$time[$j]->over_out_minute.'.00');
-//                            $interval = $start_date->diff($end_date);
-//                            $hours   = $interval->format('%h');
-//                            $minutes = $interval->format('%i');
-//                            echo  round((($hours * 60 + $minutes)/60),2);
+//                                if($time[$j]->afternoon_time!=null&&$time[$j]->morning_time!=null){}{
+//                                    $pre = $time[$j]->afternoon_time+$time[$j]->morning_time;
+//                                    if($pre<8){
+//                                        $pre-=8;
+//                                        echo round(abs($pre));
+//                                    }
+//                                }
 //                            ?>
-                        <td class="text_center"></td>
-                        <td class="text_center"></td>
-                        <td class="text_center"></td>
+                        </td>
                         <?php ($j < count($time) - 1 ? $j++ : $j = -1)?>
                         <?php elseif($days[$i][1]!='Sun'):?>
-                        <td class="text_center absent" colspan="12"a>ABSENT</td>
+                        <td class="text_center absent" colspan="12">ABSENT</td>
                     <?php endif; endfor;?>
                     </tr>
                     <tr>
                         <td style="text-align: right" colspan="11">Total Time:</td>
-                        <td class="text_center"></td>
-                        <td class="text_center"></td>
+                        <td class="text_center"><?=$total_time?></td>
+                        <td class="text_center"><?=$total_ot?></td>
                         <td class="text_center"></td>
                     </tr>
                     </tbody>

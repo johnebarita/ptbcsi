@@ -41,7 +41,6 @@
 
                         <td class="text-center text_center">
                             <i class="btn btn-info fa fa-edit iconedit" data-toggle="modal" data-target="#employeeEdit">&nbsp;&nbsp;Edit</i>&nbsp;&nbsp;&nbsp;
-                            <i class="btn btn-danger fa fa-trash-alt icondelete" data-toggle="modal" data-target="#employeeDelete">&nbsp;&nbsp;Delete</i>
                         </td>
                     </tr>
 

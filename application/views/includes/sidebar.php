@@ -18,9 +18,6 @@
         <div class="sidebar-brand-text mx-3">PTBCSI ADMIN</div>
     </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-    <br>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -72,7 +69,7 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Request Management :</h6>
-                <a class="collapse-item" href="">Overtime</a>
+                <a class="collapse-item" href="overtime">Overtime</a>
                 <a class="collapse-item" href="leave_requests">Leave</a>
             </div>
         </div>
@@ -81,7 +78,7 @@
 <!--    SCHEDULE-->
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="schedule">
             <i class="fas fa-fw fa-clock"></i>
             <span>Schedule</span></a>
     </li>
@@ -106,7 +103,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Employee Management :</h6>
                 <a class="collapse-item" href="employee_list">Employee List</a>
-                <a class="collapse-item" href="positions">Positions</a>
+                <a class="collapse-item" href="position">Position</a>
 <!--                <a class="collapse-item" href="card">Cards</a>-->
 <!--                <a class="collapse-item" href="button">Buttons</a>-->
             </div>
@@ -116,7 +113,7 @@
     <!--    PAYROLL-->
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="payroll">
             <i class="fas fa-fw fa-money-bill"></i>
             <span>Payroll</span></a>
     </li>
@@ -124,7 +121,7 @@
     <!--    CASH  ADVANCE-->
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="cashAdvance">
             <i class="fas fa-fw fa-cash-register"></i>
             <span>Cash Advance</span></a>
     </li>
@@ -139,13 +136,25 @@
     <!--    REPORTS-->
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Reports</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+           aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-retweet"></i>
+            <span>Reports</span>
+        </a>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Employee Summary Report :</h6>
+                <a class="collapse-item" href="attendance_report">Attendance Report</a>
+                <a class="collapse-item" href="payroll_report">Payroll Report</a>
+            </div>
+        </div>
     </li>
+<!--    <li class="nav-item">-->
+<!--        <a class="nav-link" href="reports">-->
+<!--            <i class="fas fa-fw fa-chart-area"></i>-->
+<!--            <span>Reports</span></a>-->
+<!--    </li>-->
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my02">
 
 
     <!-- Divider -->

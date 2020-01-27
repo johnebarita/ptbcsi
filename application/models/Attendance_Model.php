@@ -33,6 +33,15 @@ class Attendance_Model extends CI_Model
             ->result();
         return $res;
     }
+    public function getAttendanceAll($start_day, $end_day)
+    {
+        $res = $this->db->select('*')
+            ->from('tbl_loginsheet')
+            ->where('date between "' . $start_day . '" and "' . $end_day . '"')
+            ->get()
+            ->result();
+        return $res;
+    }
 
     public function getUsers()
     {
