@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tableFixHead {
+            overflow: auto;
+            height: 100px;
+            width: 500px;
+            margin: 10px;
+            border: 1px solid red;
+        }
+
+        /* Just common table stuff. */
+        table {
+            border-collapse: separate;
+            border-spacing: 0px !important;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px 16px;
+        }
+
+        th {
+            background: #eee;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tableFixHead">
+    <table>
+        <thead>
+        <tr class="a">
+            <th>TH 1</th>
+            <th>TH 2</th>
+        </tr>
+        <tr class="b">
+            <th>TH 1</th>
+            <th>TH 2</th>
+            <th>TH 2</th>
+            <th>TH 2</th>
+            <th>TH 2</th>
+            <th>TH 2</th>
+            <th>TH 2</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>A1</td>
+            <td>A2</td>
+        </tr>
+        <tr>
+            <td>B1</td>
+            <td>B2</td>
+        </tr>
+        <tr>
+            <td>C1</td>
+            <td>C2</td>
+        </tr>
+        <tr>
+            <td>D1</td>
+            <td>D2</td>
+        </tr>
+        <tr>
+            <td>E1</td>
+            <td>E2</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="../../../assets/vendor/jquery/jquery.min.js"></script>
+<script>
+    $(function () {
+        var $th = $('.tableFixHead').find('thead tr th ');
+        console.log($th);
+        $('.tableFixHead').on('scroll', function () {
+            console.log(this.scrollTop);
+            $th.css('transform', 'translateY(' + this.scrollTop + 'px)');
+
+        });
+    });
+
+</script>
+</body>
+</html>
