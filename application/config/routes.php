@@ -49,25 +49,77 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'home';
-$route['home'] = 'home/index';
-$route['dtr'] = 'home/dtr';
-$route['employee_list'] = 'home/employee_list';
-$route['add_employee'] = 'home/addEmployee';
-//$route['calendar'] = 'home/calendar';
-$route['leave_requests'] = 'home/leave_requests';
-$route['employees_leave_requests'] = 'home/employees_leave_requests';
-$route['button'] = 'home/button';
-$route['card'] = 'home/card';
-$route['color'] = 'home/color';
-$route['border'] = 'home/border';
-$route['animation'] = 'home/animation';
-$route['overtime'] = 'home/overtime';
-$route['schedule'] = 'home/schedule';
-$route['position'] = 'home/position';
-$route['cashAdvance'] = 'home/cashAdvance';
-$route['other'] = 'home/other';
-$route['payroll'] = 'home/payroll';
-$route['test'] = 'attendancecontroller/test';
-$route['404_override'] = '';
+
+
+$route['default_controller'] = 'login_controller';
+$route['login'] = 'login_controller/login';
+$route['logout'] = 'login_controller/logout';
+
+
+
+
+require_once( BASEPATH . 'database/DB'.'.php' );
+$db = & DB();
+$query = $db->get('tbl_routes');
+$result = $query->result();
+
+if($query->num_rows() > 0){
+    foreach ($query->result() as $row){
+        $route[$row->link] = $row->class != $row->link ? $row->class . "/" . $row->link : $row->class;
+        if($row->wildcards){
+            $route[$row->link . "/" . $row->wildcards] = $row->class != $row->link ? $row->class . "/" . $row->link : $row->class;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//$route['admin'] = 'admin/dashboard';
+//$route['dashboard'] = 'home/dashboard';
+//$route['dtr'] = 'home/dtr';
+//$route['employee_list'] = 'home/employee_list';
+//$route['add_employee'] = 'home/addEmployee';
+$route['employee/leave_requests'] = 'employee/leave_requests';
+$route['employees_leave_requests'] = 'employee/employees_leave_requests';
+//$route['button'] = 'home/button';
+//$route['card'] = 'home/card';
+//$route['color'] = 'home/color';
+//$route['border'] = 'home/border';
+//$route['animation'] = 'home/animation';
+//$route['overtime'] = 'home/overtime';
+//$route['schedule'] = 'home/schedule';
+//$route['position'] = 'home/position';
+//$route['cashAdvance'] = 'home/cashAdvance';
+//$route['reports'] = 'home/reports';
+//$route['attendance_report'] = 'home/attendance_report';
+//$route['payroll_report'] = 'home/payroll_report';
+//$route['other'] = 'home/other';
+//$route['payroll'] = 'home/payroll';
+//$route['test'] = 'attendancecontroller/test';
+//$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+

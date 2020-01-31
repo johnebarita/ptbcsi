@@ -1488,13 +1488,17 @@ pre code {
 }
 .persistent-table{
     border-top: 0 !important;
+    white-space: nowrap;
+    font-size: 12px !important;
 }
 
 .persistent-table th{
     border:0 !important;
-
+    padding:6px!important;
 }
-
+.persistent-table tbody td{
+    padding:6px!important;
+}
 .persistent-tp th{
     background:#4e73df;
     color:white;
@@ -1506,7 +1510,7 @@ pre code {
     background:#4e73df ;
     color:white;
     position: sticky;
-    top:48px;
+    top:6.2% !important;
 }
 
 .table td, .table th {

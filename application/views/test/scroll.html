@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery addClass example</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script
+            type="text/javascript"
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"
+
+    ></script>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.1.3/jquery.floatThead.min.js"></script>
+
+    <style id="compiled-css" type="text/css">
+
+        /* CSS overrides for JQuery UI theme */
+        /* General table formatting */
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+
+
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 5px;
+            background-color: #5C9CCC;
+            color: #ffffff;
+        }
+
+        .basic-table td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .compact-table td {
+            padding-top: 1px;
+            padding-right: 5px;
+            padding-bottom: 1px;
+            padding-left: 5px;
+        }
+
+        .row-selectable-table > tbody > tr:hover {
+            background-color: #6CACDC;
+            color: white;
+            cursor: pointer;
+        }
+
+        #prod-list > tbody > tr:hover {
+            cursor: default;
+        }
+
+        #wages-table-container { /* Fixed header tables */
+            height: 70vh;
+            overflow-y: scroll;
+        }
+
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            $("#prod-list").floatThead({
+                scrollContainer: function ($table) {
+                    return $('#wages-table-container');
+                }
+            });
+        }
+    </script>
+
+</head>
+<body>
+<div> <!-- Tabs container -->
+    <div id="products-panel">
+        <div id="product-table-container">
+            <table id="prod-list" class="row-selectable-table basic-table compact-table" width="100%">
+                <div>
+                    <thead>
+                    <tr style="vertical-align:middle;">
+                        <th rowspan="2">SKU</th>
+                        <th rowspan="2">Desc</th>
+                        <th rowspan="2">Mfg</th>
+                        <th rowspan="2">Pkg</th>
+                        <th colspan="7" style="text-align:center;">STOCK</th>
+                        <th rowspan="2">Weight</th>
+                        <th colspan="3" style="text-align:center;">TARIFF (<a href="https://hts.usitc.gov"
+                                                                              target="_blank">Lookup</a>)
+                        </th>
+                        <th rowspan="2">Origin</th>
+                        <th rowspan="2">Status</th>
+                    </tr>
+                    <tr>
+                        <th>Count</th>
+                        <th>-Reserved</th>
+                        <th>=Available</th>
+                        <th>Preorder</th>
+                        <th>Verified On</th>
+                        <th>Notes</th>
+                        <th>LS Trigger</th>
+                        <th>Part 1</th>
+                        <th>Part 2</th>
+                        <th>Desc</th>
+                    </tr>
+                    </thead>
+                </div>
+                <tbody>
+
+                <tr data-sku="W1">
+                    <td>W1</td>
+                    <td>Widget 1</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W2">
+                    <td>W2</td>
+                    <td>Widget 2</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W3">
+                    <td>W3</td>
+                    <td>Widget 3</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W4">
+                    <td>W4</td>
+                    <td>Widget 4</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W5">
+                    <td>W5</td>
+                    <td>Widget 5</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W6">
+                    <td>W6</td>
+                    <td>Widget 6</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W7">
+                    <td>W7</td>
+                    <td>Widget 7</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W8">
+                    <td>W8</td>
+                    <td>Widget 8</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W9">
+                    <td>W9</td>
+                    <td>Widget 9</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W10">
+                    <td>W10</td>
+                    <td>Widget 10</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W11">
+                    <td>W11</td>
+                    <td>Widget 11</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W12">
+                    <td>W12</td>
+                    <td>Widget 12</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W13">
+                    <td>W13</td>
+                    <td>Widget 13</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W14">
+                    <td>W14</td>
+                    <td>Widget 14</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W15">
+                    <td>W15</td>
+                    <td>Widget 15</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W16">
+                    <td>W16</td>
+                    <td>Widget 16</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W17">
+                    <td>W17</td>
+                    <td>Widget 17</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W18">
+                    <td>W18</td>
+                    <td>Widget 18</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W19">
+                    <td>W19</td>
+                    <td>Widget 19</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+                <tr data-sku="W20">
+                    <td>W20</td>
+                    <td>Widget 20</td>
+                    <td>W-Corp</td>
+                    <td>Env</td>
+                    <td class="numbercol">929</td>
+                    <td class="numbercol">100</td>
+                    <td class="numbercol">1029</td>
+                    <td></td>
+                    <td>2019/01/06</td>
+                    <td></td>
+                    <td>10</td>
+                    <td>0.034</td>
+                    <td>846712</td>
+                    <td>0040</td>
+                    <td>Misc</td>
+                    <td>US</td>
+                    <td>Active</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

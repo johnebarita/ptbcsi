@@ -29,9 +29,20 @@ class Attendance_Model extends CI_Model
             ->from('tbl_loginsheet')
             ->where('staff_id', $user_id)
             ->where('date between "' . $start_day . '" and "' . $end_day . '"')
+            ->order_by('date','asc')
             ->get()
             ->result();
         return $res;
+    }
+    public function getAllAttendance($start_day, $end_day)
+    {
+        $result = $this->db->select('*')
+            ->from('tbl_employee as employee')
+            ->join('tbl_loginsheet as loginsheet','employee.employee_id = loginsheet.staff_id')
+            ->where('date between "' . $start_day . '" and "' . $end_day . '"')
+            ->get()
+            ->result();
+        return $result;
     }
 
     public function getUsers()

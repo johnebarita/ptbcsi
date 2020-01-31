@@ -184,7 +184,7 @@ class CI_FTP {
 	// --------------------------------------------------------------------
 
 	/**
-	 * FTP Login
+	 * FTP LoginController
 	 *
 	 * @return	bool
 	 */

@@ -222,11 +222,11 @@ class CI_Loader {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Model Loader
+	 * DBModel Loader
 	 *
 	 * Loads and instantiates models.
 	 *
-	 * @param	mixed	$model		Model name
+	 * @param	mixed	$model		DBModel name
 	 * @param	string	$name		An optional object name to assign to
 	 * @param	bool	$db_conn	An optional database connection configuration to initialize
 	 * @return	object
@@ -311,7 +311,7 @@ class CI_Loader {
 				require_once(BASEPATH.'core'.DIRECTORY_SEPARATOR.'Model.php');
 			}
 
-			$class = config_item('subclass_prefix').'Model';
+			$class = config_item('subclass_prefix'). 'DBModel';
 			if (file_exists($app_path.$class.'.php'))
 			{
 				require_once($app_path.$class.'.php');
@@ -922,7 +922,7 @@ class CI_Loader {
 		}
 
 		// This allows anything loaded using $this->load (views, files, etc.)
-		// to become accessible from within the Controller and Model functions.
+		// to become accessible from within the Controller and DBModel functions.
 		$_ci_CI =& get_instance();
 		foreach (get_object_vars($_ci_CI) as $_ci_key => $_ci_var)
 		{
@@ -1360,9 +1360,9 @@ class CI_Loader {
 		}
 
 		// Autoload models
-		if (isset($autoload['model']))
+		if (isset($autoload['DBModel']))
 		{
-			$this->model($autoload['model']);
+			$this->model($autoload['DBModel']);
 		}
 	}
 
