@@ -13,7 +13,7 @@ class Employee_Model extends CI_Model
         parent::__construct();
     }
 
-    public function getUsers()
+    public function get_users()
     {
         $type = array('7','2','16','4');
         $result = $this->db->select('*')
@@ -26,6 +26,17 @@ class Employee_Model extends CI_Model
             ->get()
             ->result();
         return $result;
+    }
+
+    public function get_employees()
+    {
+        $result = $this->db->select('*')
+            ->from('tbl_employee')
+            ->order_by('lastname', 'asc')
+            ->get()
+            ->result();
+        return $result;
+
     }
 
 

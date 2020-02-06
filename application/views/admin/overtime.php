@@ -9,7 +9,7 @@
             <h6 class="m-0 font-weight-bold text-primary"><strong>TDZ</strong> <i class="divider"> / </i> <span>Overtime</span></h6>
         </div>
         <div class="card-body">
-            <input type="button" class="btn btn-facebook" value="Add New Overtime" data-toggle="modal" data-target="#addOvertime"><br><br>
+            <input type="button" class="btn btn-facebook" value="Add New Overtime" data-toggle="modal" data-target="#add-overtime"><br><br>
             <div class="table-responsive">
                 <table class="table table-bordered" style="max-height: 50vh;overflow: auto" width="100%" cellspacing="0">
                     <thead>
@@ -47,47 +47,7 @@
             </div>
         </div>
     </div>
-
-<!--    Modal for Adding overtime-->
-    <div class="modal fade" id="addOvertime" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title kulay" id="exampleModalLabel">Request Overtime</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body mod">
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body px-lg-5 pt-0 border">
-                            <br>
-                            <form method="post" action="requestOvertime">
-                                <select name="user_id" id="month" class="input input-sm monthName" style="width: 100%;padding: 5px;margin-top: 10px;">
-                                    <?php foreach ($users as $user):?>
-                                        <option value="<?=$user->employee_id;?>" ><?= strtoupper($user->lastname." ".$user->firstname);?></option>
-                                    <?php endforeach;?>
-                                </select>&nbsp;&nbsp;
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Reason</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput" name="reason" placeholder="Please state your reason" required/>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                            <!-- Form -->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
+    <?php include  getcwd().'\application\views\includes\modals\add_overtime_modal.php';?>
 
 <!--    Edit Modal-->
     <div class="modal fade" id="overtimeEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,7 +105,7 @@
         <div class="modal fade" id="overtimeAccept<?=$overtime->overtime_request_id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form action="updateOvertimeStatus" method="post">
+                    <form action="update-overtime" method="post">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Delete Schedule</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -172,7 +132,7 @@
     <div class="modal fade" id="overtimeReject<?=$overtime->overtime_request_id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="updateOvertimeStatus" method="post">
+                <form action="update-overtime" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Delete Schedule</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

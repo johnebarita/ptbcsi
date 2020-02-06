@@ -17,8 +17,7 @@
 <script src="<?= base_url(); ?>assets/js/demo/chart-area-demo.js"></script>
 <script src="<?= base_url(); ?>assets/js/demo/chart-pie-demo.js"></script>
 <script src="<?= base_url(); ?>assets/js/demo/chart-bar-demo.js"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.1.3/jquery.floatThead.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.1.3/jquery.floatThead.min.js"></script>
 <!--<script src="assets/js/jquery.fixedheadertable.min.js"></script>-->
 <script type="text/javascript">
 

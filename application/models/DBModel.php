@@ -265,9 +265,11 @@ class DBModel extends CI_Model
             ->get()
             ->result();
 
-//        $query = $this->db->query('select * from tbl_employee');
-//        var_dump($result);
-
         return $result;
+    }
+    public function delete_cash_advance($cash_advance_id)
+    {
+        $this->db->where('cash_advance_id', $cash_advance_id);
+        $this->db->delete('tbl_cash_advance');
     }
 }

@@ -78,6 +78,10 @@ class CI_Controller {
 		$this->load =& load_class('Loader', 'core');
 		$this->load->initialize();
 		log_message('info', 'Controller Class Initialized');
+
+        if(!isset($this->router->routes[uri_string()])){
+            show_404(); // Or whatever you want ...
+        }
 	}
 
 	// --------------------------------------------------------------------

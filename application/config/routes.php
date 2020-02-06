@@ -51,75 +51,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 
-$route['default_controller'] = 'login_controller';
-$route['login'] = 'login_controller/login';
-$route['logout'] = 'login_controller/logout';
+$route['default_controller'] = 'Login';
+
+$route[''] = 'login/index';
+$route['login'] = 'login/login';
+$route['logout'] = 'login/logout';//not configured yet
+
+$route['dashboard'] = 'dashboard/view';
+
+$route['dtr'] = 'dtr/view';
+
+$route['overtime'] = 'overtime/view';
+$route['add-overtime'] = 'overtime/add';
+$route['update-overtime'] = 'overtime/update_status';
+
+$route['leave'] = 'leave/view';
+$route['add-leave'] = 'leave/add';
+$route['delete-leave'] = 'leave/delete';
+$route['update-leave'] = 'leave/update';
+$route['employee-leave'] = 'leave/employee_view';
+$route['update-leave-status'] = 'leave/update_status';
+
+$route['schedule'] = 'schedule/view';
+$route['add-schedule'] = 'schedule/add';
+$route['update-schedule'] = 'schedule/update';
+$route['delete-schedule'] = 'schedule/delete';
+
+$route['payroll'] = 'payroll/view';
+
+$route['cash-advance'] ='cash/view';
+$route['add-cash-advance'] ='cash/add';
+$route['update-cash-advance'] ='cash/update';
+$route['delete-cash-advance'] ='cash/delete';
 
 
+$route['404_override'] = 'errors/show_404';
+$route['404'] = 'errors/show_404';
 
-
-require_once( BASEPATH . 'database/DB'.'.php' );
-$db = & DB();
-$query = $db->get('tbl_routes');
-$result = $query->result();
-
-if($query->num_rows() > 0){
-    foreach ($query->result() as $row){
-        $route[$row->link] = $row->class != $row->link ? $row->class . "/" . $row->link : $row->class;
-        if($row->wildcards){
-            $route[$row->link . "/" . $row->wildcards] = $row->class != $row->link ? $row->class . "/" . $row->link : $row->class;
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//$route['admin'] = 'admin/dashboard';
-//$route['dashboard'] = 'home/dashboard';
-//$route['dtr'] = 'home/dtr';
-//$route['employee_list'] = 'home/employee_list';
-//$route['add_employee'] = 'home/addEmployee';
-$route['employee/leave_requests'] = 'employee/leave_requests';
-$route['employees_leave_requests'] = 'employee/employees_leave_requests';
-//$route['button'] = 'home/button';
-//$route['card'] = 'home/card';
-//$route['color'] = 'home/color';
-//$route['border'] = 'home/border';
-//$route['animation'] = 'home/animation';
-//$route['overtime'] = 'home/overtime';
-//$route['schedule'] = 'home/schedule';
-//$route['position'] = 'home/position';
-//$route['cashAdvance'] = 'home/cashAdvance';
-//$route['reports'] = 'home/reports';
-//$route['attendance_report'] = 'home/attendance_report';
-//$route['payroll_report'] = 'home/payroll_report';
-//$route['other'] = 'home/other';
-//$route['payroll'] = 'home/payroll';
-//$route['test'] = 'attendancecontroller/test';
-//$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
