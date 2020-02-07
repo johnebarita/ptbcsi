@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/ptbcsi/';
-$config['base_url'] = 'http://localhost/ptbcsi-john/';
+$config['base_url'] = 'http://localhost/ptbcsi/';
 
 /*
 |--------------------------------------------------------------------------
