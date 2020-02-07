@@ -13,7 +13,7 @@ class Dtr extends CI_Controller
         parent::__construct();
         $this->load->helper(array('url', 'html', 'form'));
         $this->load->library('pagination','session');
-        $this->load->model(array('Dtr_model', 'Holiday_model', 'Employee_model'));
+        $this->load->model(array('dtr_model', 'holiday_model', 'employee_model'));
         if (!$_SESSION['is_logged_in'] ) {
             redirect(base_url(''));
         }
