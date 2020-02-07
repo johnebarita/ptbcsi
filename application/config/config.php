@@ -24,8 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/ptbcsi/';
-//$config['base_url'] = 'http://localhost/ptbcsi/';
-$config['base_url'] = 'http://ubuntuserver.net/';
+$config['base_url'] = 'http://localhost/ptbcsi/';
 
 /*
 |--------------------------------------------------------------------------
