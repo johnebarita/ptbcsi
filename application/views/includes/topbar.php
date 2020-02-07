@@ -174,6 +174,6 @@
         </li>
     </ul>
 </nav>
-<?php include getcwd().'\application\views\includes\modals\logout_modal.php';?>
+<?php include getcwd().'/application/views/includes/modals/logout_modal.php';?>
 <!-- End of Topbar -->
 
