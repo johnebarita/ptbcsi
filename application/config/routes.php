@@ -85,6 +85,11 @@ $route['update-cash-advance'] ='cash/update';
 $route['delete-cash-advance'] ='cash/delete';
 
 
+$route['employee'] = 'employee/view';
+$route['add-employee'] = 'employee/add';
+$route['update-employee'] = 'employee/update';
+
+
 $route['404_override'] = 'errors/show_404';
 $route['404'] = 'errors/show_404';
 

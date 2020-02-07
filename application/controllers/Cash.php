@@ -29,6 +29,7 @@ class Cash extends CI_Controller
         $data['users'] = $users;
         $data['cashAdvances'] = $cashAdvances;
         $data['page_load'] = 'admin/cash_advance';
+        $data['active'] = "cash advance";
         $this->load->view('includes/template', $data);
     }
 

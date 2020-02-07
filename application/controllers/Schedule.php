@@ -26,6 +26,7 @@ class Schedule extends CI_Controller
         $schedules = $this->schedule_model->get_all();
         $data['schedules'] = $schedules;
         $data['page_load'] = 'admin/schedule';
+        $data['active'] = "schedule";
         $this->load->view('includes/template', $data);
     }
 

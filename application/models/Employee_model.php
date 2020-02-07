@@ -39,5 +39,16 @@ class Employee_model extends CI_Model
 
     }
 
+    public function add_employee($employee)
+    {
+        $this->db->insert('tbl_employee', $employee);
+    }
+
+    public function update_employee($employee_id, $employee)
+    {
+        $this->db->where('employee_id', $employee_id)
+                 ->update('tbl_employee', $employee);
+    }
+
 
 }
