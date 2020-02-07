@@ -55,7 +55,7 @@ class Admin extends CI_Controller
         $days = array();
         $month_name = date('F', strtotime($start_day));
 
-        $this->load->model('attendance_model');
+        $this->load->model('Attendance_model');
         $users = $this->attendance_model->getUsers();
         $time_data = $this->attendance_model->getAttendance($user_id, $start_day, $end_day);
 
@@ -125,7 +125,7 @@ class Admin extends CI_Controller
 
     public function overtime()
     {
-        $this->load->model('DBModel');
+        $this->load->model('Dbmodel');
         $overtimes = $this->DBModel->getOverTimes();
         $users = $this->DBModel->getEmployees();
         $data['users'] = $users;
@@ -136,7 +136,7 @@ class Admin extends CI_Controller
 
     public function leave_requests()
     {
-        $this->load->model('DBModel');
+        $this->load->model('Dbmodel');
         $leaves = $this->DBModel->getLeave($_SESSION['user_id']);
         $data['leaves'] = $leaves;
         $data['page_load'] = 'admin/leave_requests';
@@ -145,7 +145,7 @@ class Admin extends CI_Controller
 
     public function employees_leave_requests()
     {
-        $this->load->model('DBModel');
+        $this->load->model('Dbmodel');
         $leaves = $this->DBModel->getLeaves();
         $users = $this->DBModel->getEmployees();
         $data['users'] = $users;
@@ -157,7 +157,7 @@ class Admin extends CI_Controller
 
     public function schedule()
     {
-        $this->load->model("DBModel");
+        $this->load->model("Dbmodel");
         $sched = $this->DBModel->get_schedule();
 
 
@@ -519,7 +519,7 @@ class Admin extends CI_Controller
             $leave->request_start_time = $_POST['date_from'];
             $leave->request_duration = $_POST['date_to'];
             $leave->status = 'Pending';
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addLeave($leave);
 
         }
@@ -537,7 +537,7 @@ class Admin extends CI_Controller
             $leave->request_start_time = $_POST['date_from'];
             $leave->request_duration = $_POST['date_to'];
             $leave->status = 'Pending';
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addLeave($leave);
         }
         redirect(base_url('admin/employees_leave_requests'));
@@ -547,7 +547,7 @@ class Admin extends CI_Controller
     public function updateLeaveStatus()
     {
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->updateLeaveStatus($_POST['leave_id'], $_POST['status']);
         }
         redirect(base_url('admin/employees_leave_requests'));
@@ -556,7 +556,7 @@ class Admin extends CI_Controller
     public function updateLeaveRequest()
     {
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $leave = new stdClass();
             $leave->type = $_POST['leave_type'];
             $leave->request_start_time = $_POST['date_from'];
@@ -569,7 +569,7 @@ class Admin extends CI_Controller
     public function deleteLeave()
     {
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->deleteLEave($_POST['leave_id']);
         }
         redirect(base_url('admin/leave_requests'));
@@ -578,7 +578,7 @@ class Admin extends CI_Controller
     public function updateOvertimeStatus()
     {
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->updateOvertimeStatus($_POST['overtime_id'], $_POST['status']);
             echo "hala";
         } else {
@@ -597,7 +597,7 @@ class Admin extends CI_Controller
             $overtime->request_start_time = '05:00 PM';
             $overtime->request_end_time = '10:00 PM';
             $overtime->status = 'Pending';
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addOvertime($overtime);
         }
         redirect(base_url('admin/overtime'));
@@ -610,7 +610,7 @@ class Admin extends CI_Controller
             $timeout = date('h:m A', strtotime($_POST['time-out']));
             date('h:m A', strtotime($timein));
 
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->schedule_insert($timein, $timeout);
         }
         redirect(base_url('admin/schedule'));
@@ -619,7 +619,7 @@ class Admin extends CI_Controller
     public function scheduleUpdate()
     {
 
-        $this->load->model('DBModel');
+        $this->load->model('Dbmodel');
 
         if (!empty($_POST)) {
             $timein = date('h:m A', strtotime($_POST['time-in']));
@@ -629,7 +629,7 @@ class Admin extends CI_Controller
 
             var_dump($sched_id);
 
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
 
             $sched = new stdClass();
             $sched->time_in = $timein;
@@ -645,7 +645,7 @@ class Admin extends CI_Controller
     public function scheduleDelete()
     {
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $id = $_POST['sched'];
             $this->DBModel->delete_schedule($id);
         }
@@ -674,7 +674,7 @@ class Admin extends CI_Controller
             $cash->date_modified = date('Y-m-d');
             $cash->status = "Unpaid";
             $cash->balance = $_POST['amount'];
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addCashAdvance($cash);
         }
         redirect(base_url('admin/cashAdvance'));
@@ -686,7 +686,7 @@ class Admin extends CI_Controller
             $cash = new stdClass();
             $cash->amount = $_POST['amount'];
             $cash->repay_amount = $_POST['repay_amount'];
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->updateCashAdvance($cash, $_POST['cash_id']);
         }
         redirect(base_url('admin/cashAdvance'));

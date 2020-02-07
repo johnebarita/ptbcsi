@@ -6,7 +6,7 @@
  * Date: 24/01/2020
  * Time: 5:48 PM
  */
-class Employee_Model extends CI_Model
+class Employee_model extends CI_Model
 {
     public function __construct()
     {

@@ -6,7 +6,7 @@
  * Date: 05/02/2020
  * Time: 9:48 PM
  */
-class Schedule_Model extends CI_Model
+class Schedule_model extends CI_Model
 {
     public function __construct()
     {

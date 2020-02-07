@@ -6,7 +6,7 @@
  * Date: 05/02/2020
  * Time: 9:42 PM
  */
-class Leave_Model extends CI_Model
+class Leave_model extends CI_Model
 {
     public function __construct()
     {

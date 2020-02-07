@@ -6,7 +6,7 @@
  * Date: 05/02/2020
  * Time: 9:32 PM
  */
-class Overtime_Model extends CI_Model
+class Overtime_model extends CI_Model
 {
     public function __construct()
     {

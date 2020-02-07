@@ -88,7 +88,7 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('username', 'Username:', 'required|trim|xss_clean|callback_validation');
         $this->form_validation->set_rules('password', 'Password:', 'required|trim');
 
-        $this->load->model('login_model');
+        $this->load->model('Login_model');
         $query = $this->login_model->validate();
 
         if ($query) // if the user's credentials validated...

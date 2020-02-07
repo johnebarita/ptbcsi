@@ -6,7 +6,7 @@
  * Date: 23/01/2020
  * Time: 9:35 AM
  */
-class Attendance_Model extends CI_Model
+class Attendance_model extends CI_Model
 {
     public function __construct()
     {

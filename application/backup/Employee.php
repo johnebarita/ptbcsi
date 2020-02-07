@@ -16,7 +16,7 @@ class Employee extends CI_Controller
         $this->load->library('session');
         $this->load->database();
         $this->load->helper('url');
-        $this->load->model('Attendance_Model');
+        $this->load->model('Attendance_model');
     }
 
     public function dtr()
@@ -50,8 +50,8 @@ class Employee extends CI_Controller
         $days = array();
         $month_name = date('F', strtotime($start_day));
 
-        $this->load->model('attendance_model');
-        $this->load->model('dbmodel');
+        $this->load->model('Attendance_model');
+        $this->load->model('Dbmodel');
         $users = $this->dbmodel->getUsers();
         $time_data = $this->attendance_model->getAttendance($user_id, $start_day, $end_day);
 
@@ -92,7 +92,7 @@ class Employee extends CI_Controller
             $overtime->request_start_time= '05:00 PM';
             $overtime->request_end_time ='10:00 PM';
             $overtime->status = 'Pending';
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addOvertime($overtime);
         }
         redirect(base_url('employee/dtr'));
@@ -100,7 +100,7 @@ class Employee extends CI_Controller
 
     public function leave_requests()
     {
-        $this->load->model('DBModel');
+        $this->load->model('Dbmodel');
         $leaves = $this->DBModel->getLeave($_SESSION['user_id']);
         $data['leaves'] = $leaves;
         $data['page_load'] = 'employee/leave_requests';
@@ -108,7 +108,7 @@ class Employee extends CI_Controller
     }
     public  function  deleteLeave(){
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->deleteLEave($_POST['leave_id']);
         }
         redirect(base_url('employee/leave_requests'));
@@ -116,7 +116,7 @@ class Employee extends CI_Controller
     public function updateLeaveRequest()
     {
         if (!empty($_POST)) {
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $leave = new stdClass();
             $leave->type = $_POST['leave_type'];
             $leave->request_start_time = $_POST['date_from'];
@@ -135,7 +135,7 @@ class Employee extends CI_Controller
             $leave->request_start_time = $_POST['date_from'];
             $leave->request_duration = $_POST['date_to'];
             $leave->status = 'Pending';
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addLeave($leave);
 
         }

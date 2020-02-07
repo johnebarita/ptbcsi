@@ -38,7 +38,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * DBModel Class
+ * Dbmodel Class
  *
  * @package		CodeIgniter
  * @subpackage	Libraries

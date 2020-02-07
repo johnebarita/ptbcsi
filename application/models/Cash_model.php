@@ -6,7 +6,7 @@
  * Date: 05/02/2020
  * Time: 9:52 PM
  */
-class Cash_Model extends CI_Model
+class Cash_model extends CI_Model
 {
     public function __construct()
     {

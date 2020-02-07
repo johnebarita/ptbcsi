@@ -56,7 +56,7 @@ class Cash extends CI_Controller
             $cash_advance = new stdClass();
             $cash_advance->amount = $_POST['amount'];
             $cash_advance->repay_amount = $_POST['repay_amount'];
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->update($cash_advance, $_POST['cash_advance_id']);
         }
         redirect(base_url('cash-advance'));

@@ -13,7 +13,7 @@ class Dtr extends CI_Controller
         parent::__construct();
         $this->load->helper(array('url', 'html', 'form'));
         $this->load->library('pagination','session');
-        $this->load->model(array('dtr_model','holiday_model','employee_model'));
+        $this->load->model(array('Dtr_model', 'Holiday_model', 'Employee_model'));
         if (!$_SESSION['is_logged_in'] ) {
             redirect(base_url(''));
         }
@@ -161,7 +161,7 @@ class Dtr extends CI_Controller
             $overtime->request_start_time = '05:00 PM';
             $overtime->request_end_time = '10:00 PM';
             $overtime->status = 'Pending';
-            $this->load->model('DBModel');
+            $this->load->model('Dbmodel');
             $this->DBModel->addOvertime($overtime);
         }
         redirect(base_url('admin/overtime'));

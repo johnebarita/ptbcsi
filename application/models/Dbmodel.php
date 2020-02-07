@@ -6,7 +6,7 @@
  * Date: 28/01/2020
  * Time: 9:24 AM
  */
-class DBModel extends CI_Model
+class Dbmodel extends CI_Model
 {
     public function __construct()
     {
