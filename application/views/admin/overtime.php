@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <?php include  getcwd().'\application\views\includes\modals\add_overtime_modal.php';?>
+    <?php include  getcwd().'/application/views/includes/modals/add_overtime_modal.php';?>
 
 <!--    Edit Modal-->
     <div class="modal fade" id="overtimeEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
