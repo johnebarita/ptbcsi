@@ -92,6 +92,7 @@ class Payroll extends CI_Controller
         $data['half_month'] = $half_month;
         $data['month'] = $month_name;
         $data['year'] = $year;
+        $data['active'] ='payroll';
         $data['page_load'] = 'admin/payroll';
         $this->load->view('includes/template', $data);
     }

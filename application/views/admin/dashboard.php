@@ -62,6 +62,7 @@
         -o-transition: background-color 200ms ease-in-out;
         transition: background-color 200ms ease-in-out;
     }
+
     #legend li span {
         display: block;
         position: absolute;
@@ -92,7 +93,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Employees</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">73</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($employees) ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -156,8 +157,9 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Late Today</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Late Today</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                         </div>
                     </div>
                 </div>
@@ -165,17 +167,10 @@
         </div>
     </div>
 
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Monthly Attendance Report</h6>
-        </div>
-        <br/>
-        <div id="legend" class="text-center">
-            <ul class="bar-legend">
-                <li><span style="background-color:rgba(210, 214, 222, 1)"></span>Late</li>
-                <li><span style="background-color:#2e59d9"></span>Ontime</li>
-                <li><span style="background-color:#dd4b39"></span>Absent</li>
-            </ul>
+            <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
         </div>
         <div class="card-body">
             <div class="chart-bar">
@@ -187,12 +182,13 @@
                         <div class=""></div>
                     </div>
                 </div>
-                <canvas id="myBarChart" width="462" height="160" class="chartjs-render-monitor"
-                        style="display: block; width: 462px; height: 160px;"></canvas>
+                <canvas id="myBarChart" width="531" height="320" class="chartjs-render-monitor"
+                        style="display: block; width: 531px; height: 320px;"></canvas>
             </div>
             <hr>
         </div>
     </div>
+
     <!-- Content Row -->
 
 

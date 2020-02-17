@@ -58,8 +58,10 @@ $route['login'] = 'login/login';
 $route['logout'] = 'login/logout';//not configured yet
 
 $route['dashboard'] = 'dashboard/view';
+$route['chart-data'] = 'dashboard/chart_data';
 
 $route['dtr'] = 'dtr/view';
+
 
 $route['overtime'] = 'overtime/view';
 $route['add-overtime'] = 'overtime/add';

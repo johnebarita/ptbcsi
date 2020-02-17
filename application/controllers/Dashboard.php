@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->library('pagination', 'session');
-        $this->load->model("dbmodel");
+        $this->load->model(array("dbmodel", 'employee_model', 'dashboard_model'));
 
         if (!$_SESSION['is_logged_in']) {
             redirect(base_url(''));
@@ -24,8 +24,22 @@ class Dashboard extends CI_Controller
 
     public function view()
     {
+        $employees = $this->employee_model->get_users();
+
         $data['page_load'] = "admin/dashboard";
         $data['active'] = "dashboard";
+        $data['employees'] = $employees;
         $this->load->view('includes/template', $data);
     }
+
+    public function chart_data()
+    {
+        $data = array();
+        $data[] = array(4215, 5312, 6251, 7841, 9821, 14984);
+        $data[] = array(4215, 5312, 6251, 7841, 9821, 14984);
+        $data[] = array(4215, 5312, 6251, 7841, 9821, 14984);
+        echo json_encode($data);
+    }
+
+
 }
