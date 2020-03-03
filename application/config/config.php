@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/ptbcsi/';
-$config['base_url'] = 'http://localhost/ptbcsi/';
+$config['base_url'] = 'http://localhost:8081/ptbcsi/';
 
 /*
 |--------------------------------------------------------------------------
@@ -265,7 +265,7 @@ $config['log_file_permissions'] = 0644;
 
 /*
 |--------------------------------------------------------------------------
-| Date Format for Logs
+| Date IController for Logs
 |--------------------------------------------------------------------------
 |
 | Each item that is logged has an associated date. You can use PHP date

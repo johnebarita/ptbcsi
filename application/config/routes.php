@@ -91,6 +91,14 @@ $route['employee'] = 'employee/view';
 $route['add-employee'] = 'employee/add';
 $route['update-employee'] = 'employee/update';
 
+$route['position'] = 'position/view';
+$route['add-position'] = 'position/add';
+$route['update-position'] = 'position/update';
+$route['delete-position'] = 'position/delete';
+
+$route['calendar'] = 'calendar/view';
+$route['calendar2'] = 'calendar2/view';
+$route['calendar1'] = 'calendar/AddEvent';
 
 $route['404_override'] = 'errors/show_404';
 $route['404'] = 'errors/show_404';

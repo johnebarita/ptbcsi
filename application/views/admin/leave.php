@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<?php include  getcwd().'/application/views/includes/modals/add_leave_modal.php';?>
+<?php include  getcwd().'/application/views/includes/modals/add/add_leave_modal.php';?>
 <!---------------LEAVE REQUEST MODAL-------------------->
 
 <!--            END OF LEAVE REQUEST MODAL-->

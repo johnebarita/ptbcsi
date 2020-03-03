@@ -167,4 +167,18 @@ class Dtr extends CI_Controller
         redirect(base_url('admin/overtime'));
     }
 
+    public function add()
+    {
+        // TODO: Implement add() method.
+    }
+
+    public function update()
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete()
+    {
+        // TODO: Implement delete() method.
+    }
 }

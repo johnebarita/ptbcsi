@@ -77,7 +77,7 @@ class CI_Log {
 	protected $_threshold_array = array();
 
 	/**
-	 * Format of timestamp for log files
+	 * IController of timestamp for log files
 	 *
 	 * @var string
 	 */
@@ -239,7 +239,7 @@ class CI_Log {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Format the log line.
+	 * IController the log line.
 	 *
 	 * This is for extensibility of log formatting
 	 * If you want to change the log format, extend the CI_Log class and override this method

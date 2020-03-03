@@ -334,7 +334,7 @@ abstract class CI_DB_utility {
 			'tables'		=> array(),
 			'ignore'		=> array(),
 			'filename'		=> '',
-			'format'		=> 'gzip', // gzip, zip, txt
+			'IController' => 'gzip', // gzip, zip, txt
 			'add_drop'		=> TRUE,
 			'add_insert'		=> TRUE,
 			'newline'		=> "\n",
@@ -361,26 +361,26 @@ abstract class CI_DB_utility {
 		}
 
 		// Validate the format
-		if ( ! in_array($prefs['format'], array('gzip', 'zip', 'txt'), TRUE))
+		if ( ! in_array($prefs['IController'], array('gzip', 'zip', 'txt'), TRUE))
 		{
-			$prefs['format'] = 'txt';
+			$prefs['IController'] = 'txt';
 		}
 
 		// Is the encoder supported? If not, we'll either issue an
 		// error or use plain text depending on the debug settings
-		if (($prefs['format'] === 'gzip' && ! function_exists('gzencode'))
-			OR ($prefs['format'] === 'zip' && ! function_exists('gzcompress')))
+		if (($prefs['IController'] === 'gzip' && ! function_exists('gzencode'))
+			OR ($prefs['IController'] === 'zip' && ! function_exists('gzcompress')))
 		{
 			if ($this->db->db_debug)
 			{
 				return $this->db->display_error('db_unsupported_compression');
 			}
 
-			$prefs['format'] = 'txt';
+			$prefs['IController'] = 'txt';
 		}
 
 		// Was a Zip file requested?
-		if ($prefs['format'] === 'zip')
+		if ($prefs['IController'] === 'zip')
 		{
 			// Set the filename if not provided (only needed with Zip files)
 			if ($prefs['filename'] === '')
@@ -409,11 +409,11 @@ abstract class CI_DB_utility {
 			$CI->zip->add_data($prefs['filename'], $this->_backup($prefs));
 			return $CI->zip->get_zip();
 		}
-		elseif ($prefs['format'] === 'txt') // Was a text file requested?
+		elseif ($prefs['IController'] === 'txt') // Was a text file requested?
 		{
 			return $this->_backup($prefs);
 		}
-		elseif ($prefs['format'] === 'gzip') // Was a Gzip file requested?
+		elseif ($prefs['IController'] === 'gzip') // Was a Gzip file requested?
 		{
 			return gzencode($this->_backup($prefs));
 		}

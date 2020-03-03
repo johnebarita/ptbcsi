@@ -30,17 +30,37 @@ class Employee_model extends CI_Model
 
     public function get_employees()
     {
+//        ->from('tbl_employee')
+//        ->order_by('lastname', 'asc')
+//        ->get()
+//        ->result();
+//        return $result;    $result = $this->db->select('*')
+
         $result = $this->db->select('*')
-            ->from('tbl_employee')
-            ->order_by('lastname', 'asc')
+            ->from('tbl_employee as employee')
+            ->join('tbl_position as position', 'employee.position_id = position.position_id')
+            ->join('tbl_schedule as schedule', 'position.schedule_id = schedule.schedule_id')
             ->get()
             ->result();
         return $result;
-
     }
 
-    public function add_employee($employee)
+    public function get_one($employee_id){
+        $result = $this->db->select('*,position,schedule')
+            ->from('tbl_employee as employee')
+            ->join('tbl_position as position', 'employee.position_id = position.position_id')
+            ->join('tbl_schedule as schedule', 'position.schedule_id = schedule.schedule_id')
+            ->where('employee.employee_id',$employee_id)
+            ->get()
+            ->result();
+        return $result;
+    }
+
+    public function add_employee($employee,$address)
     {
+        $this->db->insert('tbl_address',$address);
+        //kuhaon nmo ang id sa kanang imong bag-ong g add
+        $employee->address_id = 1;
         $this->db->insert('tbl_employee', $employee);
     }
 

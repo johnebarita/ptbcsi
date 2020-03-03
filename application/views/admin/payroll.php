@@ -208,7 +208,7 @@
                         <td><?= (number_format($payroll->res_dob_hol_pay, 2) == 0 ? '' : number_format($payroll->res_dob_hol_pay, 2)); ?></td>
                         <td><?= (number_format($payroll->res_spe_hol_pay, 2) == 0 ? '' : number_format($payroll->res_spe_hol_pay, 2)); ?></td>
                         <td><?= (number_format($payroll->reg_hol_ot) == 0 ? '' : number_format($payroll->reg_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->reg_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->reg_hol_ot_pay, 2)); ?></td>
+                        <td><?= (number_format($payroll->reg_hol_ot_pay, 2) == 0 ? ''   : number_format($payroll->reg_hol_ot_pay, 2)); ?></td>
                         <td><?= (number_format($payroll->dob_hol_ot) == 0 ? '' : number_format($payroll->sun_hol_ot)); ?></td>
                         <td><?= (number_format($payroll->dob_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->dob_hol_ot_pay, 2)); ?></td>
                         <td><?= (number_format($payroll->spe_hol_ot) == 0 ? '' : number_format($payroll->spe_hol_ot)); ?></td>

@@ -62,4 +62,14 @@ class Overtime extends CI_Controller
         }
         redirect(base_url('overtime'));
     }
+
+    public function update()
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete()
+    {
+        // TODO: Implement delete() method.
+    }
 }

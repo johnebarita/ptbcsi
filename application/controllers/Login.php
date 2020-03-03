@@ -139,4 +139,23 @@ class Login extends CI_Controller
         }
     }
 
+    public function add()
+    {
+        // TODO: Implement add() method.
+    }
+
+    public function view()
+    {
+        // TODO: Implement view() method.
+    }
+
+    public function update()
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete()
+    {
+        // TODO: Implement delete() method.
+    }
 }

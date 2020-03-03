@@ -1,23 +1,23 @@
 body {
-    width: 0%;
 
+    height: auto!important;
+    min-height:100vh;
     background-color: lightgray;
-    font-family: 'Kanit', sans-serif;
 }
 
-.calendar-base {
-    width: 1260px;
-    height: 700px;
-    border-radius: 20px;
-    background-color: white;
-    position: relative;
-    z-index: -1;
-    color: black;
-    margin-left: 250px;
-    margin-top: 250px;
-    margin-bottom: -450px;
+/*.calendar-base {*/
+/*height: auto;*/
+/*width: auto;*/
+/*border-radius: 20px;*/
+/*background-color: darkgray;*/
+/*position: relative;*/
+/*z-index: -1;*/
+/*color: black;*/
+/*margin-left: 10px;*/
 
-}
+/*margin-top: 50px;*/
+
+/*}*/
 
 .year {
     color: #E8E8E8;
@@ -26,9 +26,18 @@ body {
     position: relative;
     right: 75px;
     top: 20px;
-    font-weight: bold;
+
 }
 
+/*.div1 {*/
+
+/*height: 450%;*/
+/*background-color: black;*/
+/*border: 1px solid lightgray;*/
+/*margin-top: -150px;*/
+/*width: 100%;*/
+/*margin-button: -750xp;*/
+/*}*/
 .triangle-left {
     width: 0;
     height: 0;
@@ -37,7 +46,7 @@ body {
     border-bottom: 5px solid transparent;
     float: right;
     position: relative;
-    right: 90px;
+    margin-right: 190px;
     top: 36px;
 }
 
@@ -167,15 +176,16 @@ body {
 }
 
 .calendar-left {
-    width: 300px;
-    height: 700px;
-    border-radius: 20px 0px 0px 20px;
+    width: 70%;
+    height: 100%;
+    border-radius:5px 0px 0px 5px;
     background-color: dodgerblue;
-    position: relative;
-    z-index: -1;
-    bottom: 250px;
+    /*position: relative;*/
+    /*z-index: -1;*/
+    margin-top: 8px;
     color: white;
-    margin-left: 250px;
+
+    /*margin-left: 535px;*/
 
 
 }
@@ -190,6 +200,14 @@ body {
     background-color:#27e879 !important;
 }
 
+.dot {
+    height: 50px;
+    width: 50%;
+    background-color: #00aced;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 .burger-line {
     width: 25px;
     height: 3px;
@@ -199,24 +217,27 @@ body {
 }
 
 .num-date {
-    font-size: 150px;
-    width: 50%;
+    font-size: 200%;
+    width: 100%;
     margin: 0 auto;
     font-weight: 700;
+
 }
 
 .day {
     width: 50%;
-    margin: 0px auto;
-    font-size: 30px;
+    font-size: 12px;
     position: relative;
-    bottom: 60px;
+    bottom: 20px;
+    margin-top: 10px;
+    margin-left: 57px;
 }
 
 .current-events {
     font-size: 15px;
     position: relative;
     margin-left: 25px;
+
     bottom: 30px;
 }
 
@@ -245,7 +266,7 @@ body {
     border-radius: 50%;
     border: solid white 2px;
     position: relative;
-    bottom: 42px;
+    bottom: -142px;
     left: 260px;
 }
 

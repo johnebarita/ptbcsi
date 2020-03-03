@@ -62,7 +62,7 @@
 </div>
 
 <!--add-->
-<?php include  getcwd().'\application\views\includes\add_leave_modal.php';?>
+<?php include  getcwd().'/application/views/includes/modals/add/add_leave_modal.php';?>
 
 <!--accept-->
 <?php foreach ($leaves as $leave):?>

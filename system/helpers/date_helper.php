@@ -410,7 +410,7 @@ if ( ! function_exists('unix_to_human'))
 	 *
 	 * @param	int	Unix timestamp
 	 * @param	bool	whether to show seconds
-	 * @param	string	format: us or euro
+	 * @param	string	IController: us or euro
 	 * @return	string
 	 */
 	function unix_to_human($time = '', $seconds = FALSE, $fmt = 'us')
@@ -449,7 +449,7 @@ if ( ! function_exists('human_to_unix'))
 	 *
 	 * Reverses the above process
 	 *
-	 * @param	string	format: us or euro
+	 * @param	string	IController: us or euro
 	 * @return	int
 	 */
 	function human_to_unix($datestr = '')

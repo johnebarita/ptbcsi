@@ -96,7 +96,7 @@ endif;
 
     <!--    EMPLOYEES-->
     <?php if ($user_type == "Admin"): ?>
-        <li class="nav-item <?=($active =='calendar'? 'active':'');?>">
+        <li class="nav-item <?=($active =='employee'? 'active':'');?>">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true"
                aria-controls="collapseTwo">

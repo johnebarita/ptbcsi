@@ -20,6 +20,8 @@ class Schedule_model extends CI_Model
         $this->db->query($query);
     }
 
+
+
     public function get_all()
     {
         $query = $this->db->query("select * from tbl_schedule");
@@ -36,5 +38,15 @@ class Schedule_model extends CI_Model
     {
         $this->db->where('schedule_id', $id);
         $this->db->delete('tbl_schedule');
+    }
+
+    public function get_refrences($schedule_id){
+        $result = $this->db->select('*')
+            ->from('tbl_schedule as schedule')
+            ->join('tbl_position as position','schedule.schedule_id = position.schedule_id')
+            ->where('schedule.schedule_id ',$schedule_id)
+            ->get()
+            ->result();
+        return  $result;
     }
 }

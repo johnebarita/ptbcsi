@@ -40,4 +40,9 @@ class Cash_model extends CI_Model
         $this->db->where('cash_advance_id', $cash_advance_id);
         $this->db->delete('tbl_cash_advance');
     }
+
+    public function get_one()
+    {
+        // TODO: Implement get_one() method.
+    }
 }

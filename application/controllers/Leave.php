@@ -101,6 +101,7 @@ class Leave extends CI_Controller
         $data['users'] = $users;
         $data['leaves'] = $leaves;
         $data['my_leave'] = false;
+        $data['active'] = "leave";
         $data['page_load'] = 'admin/employees_leave';
         $this->load->view('includes/template', $data);
 

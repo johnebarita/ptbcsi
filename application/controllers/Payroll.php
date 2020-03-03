@@ -326,4 +326,19 @@ class Payroll extends CI_Controller
         }
         return $obj;
     }
+
+    public function add()
+    {
+        // TODO: Implement add() method.
+    }
+
+    public function update()
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete()
+    {
+        // TODO: Implement delete() method.
+    }
 }

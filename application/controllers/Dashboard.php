@@ -35,11 +35,25 @@ class Dashboard extends CI_Controller
     public function chart_data()
     {
         $data = array();
-        $data[] = array(4215, 5312, 6251, 7841, 9821, 14984);
-        $data[] = array(4215, 5312, 6251, 7841, 9821, 14984);
-        $data[] = array(4215, 5312, 6251, 7841, 9821, 14984);
+        $data[] = array(4300, 5312, 6251, 7841, 9821, 14984);
+        $data[] = array(3000, 5312, 6251, 7841, 9821, 14984);
+        $data[] = array(4215, 5312, 6251, 7841, 9821, 12000);
         echo json_encode($data);
     }
 
 
+    public function add()
+    {
+        // TODO: Implement add() method.
+    }
+
+    public function update()
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete()
+    {
+        // TODO: Implement delete() method.
+    }
 }
