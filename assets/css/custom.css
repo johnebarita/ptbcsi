@@ -1,146 +1,147 @@
-.width1
-{
-    text-align: center;font-size: 12px;
+.width1 {
+    text-align: center;
+    font-size: 12px;
 }
-.text_center
-{
+
+.text_center {
     text-align: center;
 }
-.no_hover
-{
+
+.display-flex {
+    display: flex;
+}
+
+.no_hover {
     background: #f5f5f5
 }
-.date_time
-{
-    margin-left: 20%;
+
+.date_time {
+    margin-left: auto;
 }
-.table
-{
+
+.table {
     font-size: 13px;
     color: black;
 }
-.th
-{
+
+.th {
     font-size: 12px;
 }
-.time
-{
-    margin-right: 80px;
+
+.time {
+    margin-right: 10px;
 }
-.monthName
-{
-    width: 150px;
+
+.monthName {
+    width: 105px;
     border-radius: 5px;
 }
-.empName
-{
+
+.empName {
     width: 210px;
     border-radius: 5px;
 }
-.border-left
-{
-    border-left:1px solid #006699 !important;
+
+.border-left {
+    border-left: 1px solid #006699 !important;
 }
-.border-right
-{
-    border-right:1px solid #006699 !important;
+
+.border-right {
+    border-right: 1px solid #006699 !important;
 }
-.tc
-{
-    display:none
+
+.tc {
+    display: none
 }
-.details
-{
+
+.details {
     /*text-align: left;*/
-    float:right;
+    float: right;
 }
-.rh
-{
+
+.rh {
     font-size: 15px;
 }
-.tb_rh
-{
+
+.tb_rh {
     width: 550px;
     margin-top: 8px;
 }
-.half_month
-{
-    border-radius: 5px;
 
-}
-.year
-{
+.half_month {
     border-radius: 5px;
 }
-.date_time_leave
-{
+
+.year {
+    border-radius: 5px;
+}
+
+.date_time_leave {
     margin-left: 45%;
 }
-.date_time_leave_employee
-{
+
+.date_time_leave_employee {
     margin-left: 58.8%;
 }
 
-
-.iconaccept
-{
+.iconaccept {
     color: #17a2b8;
     background: transparent;
     width: 100px;
     font-size: 13px;
 }
 
-.iconedit
-{
+.iconedit {
     color: #17a2b8;
     background: transparent;
     width: 73px;
     font-size: 13px;
 }
-.icondelete
-{
+
+.icondelete {
     color: red;
     background: transparent;
     width: 82px;
     font-size: 13px;
 }
-.iconn
-{
-    color: black;   
+
+.iconn {
+    color: black;
 }
-.icon
-{
+
+.icon {
     color: #007bff;
 }
-.fonts
-{
+
+.fonts {
     font-size: 14px;
     color: black;
 }
+
 /*modal css*/
-.names
-{
+.names {
     margin-left: 15px;
 }
+
 /*.kolor*/
 /*{*/
-    /*color: white;*/
-    /*text-decoration-color: white;*/
+/*color: white;*/
+/*text-decoration-color: white;*/
 /*}*/
 /*.kolor:active*/
 /*{*/
-    /*text-decoration: white;*/
+/*text-decoration: white;*/
 /*}*/
 .kolor:link, .kolor:visited {
     color: white;
     text-decoration: none;
 }
-.kulay
-{
+
+.kulay {
     color: blue;
 }
-.border
-{
+
+.border {
     border: solid blue;
 }
 
@@ -148,17 +149,75 @@
     background-color: #FFCCCC;
 }
 
-.absent{
+.absent {
     font-weight: bold;
     margin-left: -190px;
     font-style: italic;
     color: red;
     letter-spacing: 20px;
-/*text-align: center;*/
+    /*text-align: center;*/
 }
+
 .holiday, .holiday input, .holiday td {
     background-color: #50ec97;
 }
 
+.row-full {
+    width: 100%;
+}
+
+.sec_head {
+    display: flex;
+}
+
+.dtr_row td {
+    text-align: center;
+}
+
+.dtr_row td input {
+    width: 30px;
+    text-align: center;
+    border: 0;
+}
+.late{
+    background-color: orangered;
+}
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+}
 
 

@@ -28,6 +28,7 @@ class Calendar2 extends CI_Controller
 
     public function add()
     {
+
     }
 
     public function update()

@@ -17,6 +17,8 @@ class Employee extends CI_Controller
         if (!$_SESSION['is_logged_in']) {
             redirect(base_url(''));
         }
+        include(getcwd() . '/application/libraries/zklib/ZKLib.php');
+
     }
 
     public function view()
@@ -60,7 +62,7 @@ class Employee extends CI_Controller
             $employee->bank_name = $_POST['bank_name'];
 //            $employee->user_role_id = $_POST['user_role_id'];
             $employee->position_id = $_POST['position_id'];
-            $employee->isActive = "Yes";
+            $employee->isActive = $_POST['active'];
             $employee->gender = $_POST['gender'];
             $employee->transportation_allowance = $_POST['transportation_allowance'];
             $employee->internet_allowance = $_POST['internet_allowance'];
@@ -80,15 +82,39 @@ class Employee extends CI_Controller
             $address = new stdClass();
             $address->city = $_POST['address'];
 
-            $this->employee_model->add_employee($employee, $address);
+            $zk = new ZKLib('192.168.1.172');
+            $ip = '192.168.1.172';
+            $port = 4370;
+//            if (@socket_connect($this->_zkclient, $ip, $port)) {
+            $ret = $zk->connect();
+            if ($ret) {
+                $this->employee_model->add_employee($employee, $address);
+                $em = $this->employee_model->get_last_id();
+                if (!empty($em)) {
+                    $uid = $em->employee_id;
+                    $b = $zk->setUser($uid, $uid, $employee->firstname . " " . $employee->lastname, '');
+                    if ($b==="") {
+                        echo json_encode(true);
+                    }else{
+                        echo 'unable to connect to the biometric device 2';
+                        $this->employee_model->delete($uid);
+                    }
+                }
+            } else {
+                echo 'unable to connect to the biometric device 1';
+            }
+            $zk->disconnect();
+//            } else {
+//                $error_credentials = "<h6 id='error' style='color: rgba(255,0,0,0.7)' hidden>Incorrect username or password, Please try gain!</h6>";
+//                echo $error_credentials;
+//            }
 
         }
-        redirect(base_url('employee'));
+//        redirect(base_url('employee'));
     }
 
     public function update()
     {
-        $this->load->model('Employee_model');
 
         if (!empty($_POST)) {
 
@@ -100,6 +126,7 @@ class Employee extends CI_Controller
             $employee->birth_date = $_POST['birth_date'];
             $employee->marital_status = $_POST['marital_status'];
             $employee->email = $_POST['email'];
+            $employee->address_id = $_POST['address_id'];
             $employee->phone_number = $_POST['phone_number'];
             $employee->home_no = $_POST['home_no'];
             $employee->contact_person = $_POST['contact_person'];
@@ -114,10 +141,9 @@ class Employee extends CI_Controller
             $employee->pagibig_no = $_POST['pagibig_no'];
             $employee->bank_name = $_POST['bank_name'];
 
-            $employee->employee_login_id = $_POST['employee_login_id'];
-            $employee->address_id = 1;
+//            $employee->employee_login_id = $_POST['employee_login_id'];
             $employee->position_id = $_POST['position_id'];
-            $employee->isActive = $_POST['isActive'];
+            $employee->isActive = $_POST['active'];
             $employee->gender = $_POST['gender'];
             $employee->transportation_allowance = $_POST['transportation_allowance'];
             $employee->internet_allowance = $_POST['internet_allowance'];
@@ -132,15 +158,15 @@ class Employee extends CI_Controller
                 $user_role = 2;
             }
             $employee->user_role_id = $user_role;
-            $this->employee_model->update_employee($_POST['employee_id'], $employee);
+
+            $this->employee_model->update_employee($_POST['employee_id'], $employee, $_POST['address']);
+
         }
         redirect(base_url('employee'));
     }
 
     public function delete()
     {
-
-
         // TODO: Implement delete() method.
     }
 }

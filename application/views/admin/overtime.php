@@ -11,7 +11,7 @@
         <div class="card-body">
             <input type="button" class="btn btn-facebook" value="Add New Overtime" data-toggle="modal" data-target="#add-overtime"><br><br>
             <div class="table-responsive">
-                <table class="table table-bordered" style="max-height: 50vh;overflow: auto" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" style="max-height: 50vh;overflow: auto" width="100%" cellspacing="0">
                     <thead>
                     <tr class="fonts">
                         <th>Date</th>
@@ -34,7 +34,7 @@
                             <td><?=$overtime->request_end_time;?></td>
                             <td><?=$overtime->reason;?></td>
                             <td><?=$overtime->status;?></td>
-                            <td class="text_center">
+                            <td class="text_center display-flex">
                                 <i class="btn btn-info fa fa-edit iconaccept" <?=($overtime->status=='Pending' ? 'data-toggle="modal" ':'style=" cursor: not-allowed;"');?>
                                    data-target="#overtimeAccept<?=$overtime->overtime_request_id?>" >Accept</i>&nbsp;&nbsp;&nbsp;
                                 <i class="btn btn-danger fa fa-trash-alt icondelete"<?=($overtime->status=='Pending' ? 'data-toggle="modal" ':'style=" cursor: not-allowed;"');?>

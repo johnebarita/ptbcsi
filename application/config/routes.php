@@ -60,7 +60,7 @@ $route['logout'] = 'login/logout';//not configured yet
 $route['dashboard'] = 'dashboard/view';
 $route['chart-data'] = 'dashboard/chart_data';
 
-$route['dtr'] = 'dtr/view';
+$route['dtr'] = 'dtr/view2';
 
 
 $route['overtime'] = 'overtime/view';
@@ -79,7 +79,7 @@ $route['add-schedule'] = 'schedule/add';
 $route['update-schedule'] = 'schedule/update';
 $route['delete-schedule'] = 'schedule/delete';
 
-$route['payroll'] = 'payroll/view';
+$route['payroll'] = 'payroll/view2';
 
 $route['cash-advance'] ='cash/view';
 $route['add-cash-advance'] ='cash/add';

@@ -20,13 +20,13 @@
                     <div class="form-group row">
                         <label for="posTitle" class="col-sm-5 col-form-label">Position Title</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" name="position" id="posTitle">
+                            <input type="text" class="form-control" name="position" id="posTitle" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="rph" class="col-sm-5 col-form-label">Rate</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" name="rate" id="rph">
+                            <input type="number" class="form-control" min="1" name="rate" id="rph" required>
                         </div>
                     </div>
                     <div class="form-group row">
