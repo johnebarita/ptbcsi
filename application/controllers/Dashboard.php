@@ -56,4 +56,9 @@ class Dashboard extends CI_Controller
     {
         // TODO: Implement delete() method.
     }
+
+    public function push()
+    {
+        redirect(base_url('dashboard'));
+    }
 }

@@ -133,6 +133,17 @@
                                            name="pagibig_no">
                                 </div>
                             </div>
+                            <div class="row mt-2">
+                                <div class="col-2">
+                                    <label for="formGroupExampleInput">Active</label>
+                                    <select required name="active" id="active"
+                                            class="form-control input input-sm monthName"
+                                            style="width: 100%;padding: 5px" required>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
                             <br>
                             <div class="font-weight-bold">
                                 MONTHLY SALARY AND DEDUCTION
@@ -156,8 +167,8 @@
                                 <div class="col-3">
                                     <label for="formGroupExampleInput">Fixed Salary</label>
                                     <select required name="isFixed_salary" id="position" class="form-control input input-sm monthName" style="width: 100%;padding: 5px">
-                                        <option value="No">No</option>
-                                        <option value="Yes">Yes</option>
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
                                     </select>
                                 </div>
                             </div>

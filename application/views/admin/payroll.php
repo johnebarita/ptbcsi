@@ -190,45 +190,45 @@
                         <td><?= number_format($payroll->monthly_rate, 2); ?></td>
                         <td><?= number_format($payroll->dtr_time, 2); ?></td>
                         <td><?= ($payroll->absent == 0 ? '' : $payroll->absent); ?></td>
-                        <td><?= (number_format($payroll->late) == 0 ? '' : number_format($payroll->late)); ?></td>
-                        <td><?= number_format($payroll->basic_salary, 2); ?></td>
-                        <td><?= (number_format($payroll->allowance) == 0 ? '' : number_format($payroll->allowance)); ?></td>
-                        <td><?= (number_format($payroll->nor_ot) == 0 ? '' : number_format($payroll->nor_ot)); ?></td>
-                        <td><?= (number_format($payroll->nor_ot_pay, 2) == 0 ? '' : number_format($payroll->nor_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_sun_ot) == 0 ? '' : number_format($payroll->res_sun_ot)); ?></td>
-                        <td><?= (number_format($payroll->res_sun_ot_pay, 2) == 0 ? '' : number_format($payroll->res_sun_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_reg_hol_ot) == 0 ? '' : number_format($payroll->res_reg_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->res_reg_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->res_reg_hol_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_dob_hol_ot) == 0 ? '' : number_format($payroll->res_dob_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->res_dob_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->res_dob_hol_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_spe_hol_ot) == 0 ? '' : number_format($payroll->res_spe_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->res_spe_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->res_spe_hol_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_sun_pay, 2) == 0 ? '' : number_format($payroll->res_sun_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_reg_hol_pay, 2) == 0 ? '' : number_format($payroll->res_reg_hol_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_dob_hol_pay, 2) == 0 ? '' : number_format($payroll->res_dob_hol_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->res_spe_hol_pay, 2) == 0 ? '' : number_format($payroll->res_spe_hol_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->reg_hol_ot) == 0 ? '' : number_format($payroll->reg_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->reg_hol_ot_pay, 2) == 0 ? ''   : number_format($payroll->reg_hol_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->dob_hol_ot) == 0 ? '' : number_format($payroll->sun_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->dob_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->dob_hol_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->spe_hol_ot) == 0 ? '' : number_format($payroll->spe_hol_ot)); ?></td>
-                        <td><?= (number_format($payroll->spe_hol_ot_pay, 2) == 0 ? '' : number_format($payroll->spe_hol_ot_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->reg_hol_pay, 2) == 0 ? '' : number_format($payroll->reg_hol_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->dob_hol_pay, 2) == 0 ? '' : number_format($payroll->dob_hol_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->spe_hol_pay, 2) == 0 ? '' : number_format($payroll->spe_hol_pay, 2)); ?></td>
-                        <td><?= (number_format($payroll->total_ot, 2) == 0 ? '' : number_format($payroll->total_ot, 2)); ?></td>
+                        <td><?= ($payroll->late == 0 ? '' : number_format($payroll->late*60,2)); ?></td>
+                        <td><?=  number_format($payroll->basic_salary, 2); ?></td>
+                        <td><?= ($payroll->allowance == 0 ? '' : number_format($payroll->allowance,2)); ?></td>
+                        <td><?= ($payroll->nor_ot == 0 ? '' : number_format($payroll->nor_ot,2)); ?></td>
+                        <td><?= ($payroll->nor_ot_pay == 0 ? '' : number_format($payroll->nor_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_sun_ot == 0 ? '' : number_format($payroll->res_sun_ot,2)); ?></td>
+                        <td><?= ($payroll->res_sun_ot_pay == 0 ? '' : number_format($payroll->res_sun_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_reg_hol_ot == 0 ? '' : number_format($payroll->res_reg_hol_ot,2)); ?></td>
+                        <td><?= ($payroll->res_reg_hol_ot_pay == 0 ? '' : number_format($payroll->res_reg_hol_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_dob_hol_ot == 0 ? '' : number_format($payroll->res_dob_hol_ot,2)); ?></td>
+                        <td><?= ($payroll->res_dob_hol_ot_pay == 0 ? '' : number_format($payroll->res_dob_hol_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_spe_hol_ot == 0 ? '' : number_format($payroll->res_spe_hol_ot,2)); ?></td>
+                        <td><?= ($payroll->res_spe_hol_ot_pay == 0 ? '' : number_format($payroll->res_spe_hol_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_sun_pay == 0 ? '' : number_format($payroll->res_sun_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_reg_hol_pay == 0 ? '' : number_format($payroll->res_reg_hol_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_dob_hol_pay == 0 ? '' : number_format($payroll->res_dob_hol_pay, 2)); ?></td>
+                        <td><?= ($payroll->res_spe_hol_pay == 0 ? '' : number_format($payroll->res_spe_hol_pay, 2)); ?></td>
+                        <td><?= ($payroll->reg_hol_ot == 0 ? '' : number_format($payroll->reg_hol_ot,2)); ?></td>
+                        <td><?= ($payroll->reg_hol_ot_pay == 0 ? ''   : number_format($payroll->reg_hol_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->dob_hol_ot == 0 ? '' : number_format($payroll->sun_hol_ot,2)); ?></td>
+                        <td><?= ($payroll->dob_hol_ot_pay == 0 ? '' : number_format($payroll->dob_hol_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->spe_hol_ot == 0 ? '' : number_format($payroll->spe_hol_ot,2)); ?></td>
+                        <td><?= ($payroll->spe_hol_ot_pay == 0 ? '' : number_format($payroll->spe_hol_ot_pay, 2)); ?></td>
+                        <td><?= ($payroll->reg_hol_pay == 0 ? '' : number_format($payroll->reg_hol_pay, 2)); ?></td>
+                        <td><?= ($payroll->dob_hol_pay == 0 ? '' : number_format($payroll->dob_hol_pay, 2)); ?></td>
+                        <td><?= ($payroll->spe_hol_pay == 0 ? '' : number_format($payroll->spe_hol_pay, 2)); ?></td>
+                        <td><?= ($payroll->total_ot == 0 ? '' : number_format($payroll->total_ot, 2)); ?></td>
                         <td></td>
-                        <td><?= (number_format($payroll->gross_pay, 2) == 0 ? '' : number_format($payroll->gross_pay, 2)); ?></td>
+                        <td><?= ($payroll->gross_pay == 0 ? '' : number_format($payroll->gross_pay, 2)); ?></td>
                         <td></td>
-                        <td><?= (number_format($payroll->philhealth_con, 2) == 0 ? '' : number_format($payroll->philhealth_con, 2)); ?></td>
+                        <td><?= ($payroll->philhealth_con == 0 ? '' : number_format($payroll->philhealth_con, 2)); ?></td>
                         <td></td>
-                        <td><?= (number_format($payroll->pagibig_con, 2) == 0 ? '' : number_format($payroll->pagibig_con, 2)); ?></td>
-                        <td></td>
-                        <td></td>
+                        <td><?= ($payroll->pagibig_con == 0 ? '' : number_format($payroll->pagibig_con, 2)); ?></td>
                         <td></td>
                         <td></td>
-                        <td><?= (number_format($payroll->total_deductions, 2) == 0 ? '' : number_format($payroll->total_deductions, 2)); ?></td>
-                        <td><?= (number_format($payroll->net_pay, 2) == 0 ? '' : number_format($payroll->net_pay, 2)); ?></td>
+                        <td></td>
+                        <td></td>
+                        <td><?= ($payroll->total_deductions == 0 ? '' : number_format($payroll->total_deductions, 2)); ?></td>
+                        <td><?= ($payroll->net_pay == 0 ? '' : number_format($payroll->net_pay, 2)); ?></td>
                         <td></td>
                         <?php $i++; }?>
                     </tr>

@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <input type="button" class="btn btn-facebook" value="Add New Schedule" data-toggle="modal" data-target="#addSched"><br><br>
-                <table class="table table-bordered"  width="100%" style="max-height: 50vh;overflow: auto" cellspacing="0">
+                <table class="table table-bordered"  id="dataTable" width="100%" style="max-height: 50vh;overflow: auto" cellspacing="0">
                     <thead>
                     <tr>
                         <td class="text_center">Time in</td>

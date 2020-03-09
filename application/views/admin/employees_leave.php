@@ -22,7 +22,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive" style="overflow:auto; max-height: 50vh">
-                <table class="table table-bordered"  width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable"  width="100%" cellspacing="0">
                     <thead>
                     <tr class="fonts">
                         <th>EMPLOYEE ID</th>
@@ -45,7 +45,7 @@
                         <td><?=$leave->request_duration;?></td>
                         <td><?=$leave->type;?></td>
                         <td><?=$leave->status;?></td>
-                        <td class="text_center">
+                        <td class="text_center display-flex">
                             <i class="btn btn-info fa fa-edit iconaccept"<?=($leave->status=='Pending' ? 'data-toggle="modal" ':'style=" cursor: not-allowed;"');?>
                                data-target="#leaveRequestAccept<?=$leave->leave_request_id?>" >Accept</i>&nbsp;&nbsp;&nbsp;
                             <i class="btn btn-danger fa fa-trash-alt icondelete" <?=($leave->status=='Pending' ? 'data-toggle="modal" ':'style=" cursor: not-allowed; "');?>

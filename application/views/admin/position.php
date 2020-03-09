@@ -28,7 +28,7 @@
                             <tr class="text_center">
                                 <td><?=$position->position;?></td>
                                 <td><?=number_format($position->rate, 2);?></td>
-                                <td><?=$position->schedule_id;?></td>
+                                <td><?=$position->time_in.' - '.$position->time_out;?></td>
                                 <td>
                                     <i class="btn btn-info fa fa-edit iconedit" data-toggle="modal" data-target="#positionEdit<?=$position->position_id;?>">&nbsp;&nbsp;Edit</i>&nbsp;&nbsp;&nbsp;
                                     <i class="btn btn-danger fa fa-trash-alt icondelete" data-toggle="modal" data-target="#positionDelete<?=$position->position_id;?>">&nbsp;&nbsp;Delete</i>
@@ -73,20 +73,20 @@
                     <form action="update-position" method="post">
                         <div class="form-group row">
                             <label for="posTitle" class="col-sm-5 col-form-label">Position Title</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="position" name="position" value="<?=$position->position;?>">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="position" name="position" required value="<?=$position->position;?>">
                                 <input type="text" name="position_id" value="<?= $position->position_id ?>" hidden/>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="rph" class="col-sm-5 col-form-label">Wage</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" id="rate" name="rate" value="<?=number_format($position->rate, 2);?>">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="rate" min="1" required name="rate" value="<?=($position->rate);?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="sched" class="col-sm-5 col-form-label">Schedule</label>
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                 <select class="form-control" name="schedule_id" id="sched" data-style="btn-light">
                                     <?php foreach ($schedules as $row){?>
                                         <option value=<?=$row->schedule_id?> ><?=$row->time_in." - ".$row->time_out?></option>
