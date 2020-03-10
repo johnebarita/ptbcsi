@@ -414,18 +414,18 @@ class Dtr extends CI_Controller
 //                foreach ($att as $a){
 //                    echo json_encode($_POST['name']);
 //                    $z =(isset($users[$a['id']]) ? $users[$a['id']]['name'] : $a['id']);
-//                    $attend = new stdClass();
-//                    $attend->uid=$a['uid'];
-//                    $attend->id=$a['id'];
-//                    $attend->name=$z;
-//                    $attend->state=ZK\Util::getAttState($a['state']);
-//                    $attend->date=date("d-m-Y", strtotime($a['timestamp']));
-//                    $attend->time=date("H:i:s", strtotime($a['timestamp']));
-//                    $attend->type=ZK\Util::getAttType($a['type']);
-//                    $this->dtr_model->add_attendance($attend);
+                    $attend = new stdClass();
+                    $attend->uid=1;
+                    $attend->id='1';
+                    $attend->name='1';
+                    $attend->state='1';
+                    $attend->date='1';
+                    $attend->time='1';
+                    $attend->type='1';
+                    $this->dtr_model->add_attendance($attend);
 //                }
                 $zk->clearAttendance();
-                echo json_encode($att);
+                echo json_encode("Test");
             }
         }
         $zk->disconnect();
