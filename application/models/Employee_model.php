@@ -101,5 +101,9 @@ class Employee_model extends CI_Model
             return $result[0];
         }
     }
-
+    public function delete($employee_id)
+    {
+        $this->db->where('employee_id', $employee_id);
+        $this->db->delete('tbl_employee');
+    }
 }

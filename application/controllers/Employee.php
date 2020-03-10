@@ -82,29 +82,35 @@ class Employee extends CI_Controller
             $address = new stdClass();
             $address->city = $_POST['address'];
 
-            $zk = new ZKLib('169.254.132.152');
-            $ip = '169.254.132.152';
+            $zk = new ZKLib('192.168.1.172');
+            $ip = '192.168.1.172';
             $port = 4370;
-            if (@socket_connect($this->_zkclient, $ip, $port)) {
-                $ret = $zk->connect();
-                if ($ret) {
-                    if (!empty($em)) {
-                        $this->employee_model->add_employee($employee, $address);
-                        $em = $this->employee_model->get_last_id();
-                        $uid = $em->employee_id;
-                        $zk->setUser($uid, $uid, $employee->firstname . " " . $employee->lastname, '');
+//            if (@socket_connect($this->_zkclient, $ip, $port)) {
+            $ret = $zk->connect();
+            if ($ret) {
+                $this->employee_model->add_employee($employee, $address);
+                $em = $this->employee_model->get_last_id();
+                if (!empty($em)) {
+                    $uid = $em->employee_id;
+                    $b = $zk->setUser($uid, $uid, $employee->firstname . " " . $employee->lastname, '');
+                    if ($b==="") {
+                        echo json_encode(true);
+                    }else{
+                        echo 'unable to connect to the biometric device 2';
+                        $this->employee_model->delete($uid);
                     }
-                } else {
-                    echo 'unable to connect to the biometric device';
                 }
-                $zk->disconnect();
             } else {
-                $error_credentials = "<h6 id='error' style='color: rgba(255,0,0,0.7)' hidden>Incorrect username or password, Please try gain!</h6>";
-                echo $error_credentials;
+                echo 'unable to connect to the biometric device 1';
             }
+            $zk->disconnect();
+//            } else {
+//                $error_credentials = "<h6 id='error' style='color: rgba(255,0,0,0.7)' hidden>Incorrect username or password, Please try gain!</h6>";
+//                echo $error_credentials;
+//            }
 
         }
-        redirect(base_url('employee'));
+//        redirect(base_url('employee'));
     }
 
     public function update()

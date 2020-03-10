@@ -64,7 +64,6 @@ class ZKLib
             } else if ($type === Util::COMMAND_TYPE_DATA && !empty($session)) {
                 $ret = $session;
             }
-
             return $ret;
         } catch (ErrorException $e) {
             return false;

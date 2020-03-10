@@ -401,7 +401,7 @@
                                                 <select required name="active" id="active"
                                                         class="form-control input input-sm monthName"
                                                         style="width: 100%;padding: 5px" required>
-                                                    <option <?= ($employee->active == "1"?'selected':''); ?>value="1" >Yes</option>
+                                                    <option <?= ($employee->isActive == "1"?'selected':''); ?>value="1" >Yes</option>
                                                     <option value="0">No</option>
                                                 </select>
                                             </div>
@@ -485,6 +485,7 @@
                     </div>
                 </div>
             </div>
+    </div>
         <?php endforeach; ?>
 <script>
     error();
