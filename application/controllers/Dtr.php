@@ -118,8 +118,8 @@ class Dtr extends CI_Controller
         $data['users'] = $users;
         $data['user_id'] = $user_id;
         $this->load->view('includes/template', $data);
-
     }
+
 
     function getTimeDiff($start_hr, $start_mn, $end_hr, $end_mn)
     {
@@ -172,7 +172,7 @@ class Dtr extends CI_Controller
         $s = str_split($s, 5);
 
         $t = str_replace(":", ".", $time->morning_in);
-        if(doubleval($t)<=doubleval($s[0])){
+        if (doubleval($t) <= doubleval($s[0])) {
             return $obj;
         }
         if (doubleval($t) >= doubleval($s[0])) {
@@ -302,7 +302,7 @@ class Dtr extends CI_Controller
 
             $time->pre_time = number_format($obj->pre, 2);
             $time->ot = number_format($time->overtime_time + $obj->ot, 2);
-            $time->late = number_format($obj->late,2);
+            $time->late = number_format($obj->late, 2);
 //            echo "<pre>";
 //            var_dump($time);
 //            echo "</pre>";
@@ -379,7 +379,7 @@ class Dtr extends CI_Controller
                 $a = doubleval($a);
                 $b = str_replace(":", ".", $time);
                 $b = doubleval($b);
-                $time_sheet->morning_time = $b-$a;
+                $time_sheet->morning_time = $b - $a;
             } elseif (is_null($time_sheet->afternoon_in) && $am === 'PM') {
                 $time_sheet->afternoon_in = $time;
             } elseif (!is_null($time_sheet->afternoon_in) && $am === 'PM' && is_null($time_sheet->afternoon_out)) {
@@ -388,7 +388,7 @@ class Dtr extends CI_Controller
                 $a = doubleval($a);
                 $b = str_replace(":", ".", $time);
                 $b = doubleval($b);
-                $time_sheet->afternoon_time = $b-$a;
+                $time_sheet->afternoon_time = $b - $a;
             } elseif (is_null($time_sheet->overtime_in) && $am === 'PM') {
                 $time_sheet->overtime_in = $time;
             } elseif (!is_null($time_sheet->overtime_in) && $am === 'PM') {
@@ -397,7 +397,7 @@ class Dtr extends CI_Controller
                 $a = doubleval($a);
                 $b = str_replace(":", ".", $time);
                 $b = doubleval($b);
-                $time_sheet->overtime_time = $b-$a;
+                $time_sheet->overtime_time = $b - $a;
             }
             $this->dtr_model->update($time_sheet, $time_sheet->time_sheet_id);
         }
@@ -405,11 +405,32 @@ class Dtr extends CI_Controller
 
     public function push()
     {
-        $zk = new ZKLib('169.254.132.152');
+        $zk = new ZKLib('43.224.189.146');
         $ret = $zk->connect();
         if ($ret) {
-            $this->sort_attendance($zk->getAttendance());
+            $users = $zk->getUser();
+            $att = $zk->getAttendance();
+            if (count($att) > 0) {
+//                foreach ($att as $a){
+//                    echo json_encode($_POST['name']);
+//                    $z =(isset($users[$a['id']]) ? $users[$a['id']]['name'] : $a['id']);
+//                    $attend = new stdClass();
+//                    $attend->uid=$a['uid'];
+//                    $attend->id=$a['id'];
+//                    $attend->name=$z;
+//                    $attend->state=ZK\Util::getAttState($a['state']);
+//                    $attend->date=date("d-m-Y", strtotime($a['timestamp']));
+//                    $attend->time=date("H:i:s", strtotime($a['timestamp']));
+//                    $attend->type=ZK\Util::getAttType($a['type']);
+//                    $this->dtr_model->add_attendance($attend);
+//                }
+                $zk->clearAttendance();
+                echo json_encode($att);
+            }
         }
         $zk->disconnect();
+
+//        echo json_encode($_POST['name']);
     }
+
 }

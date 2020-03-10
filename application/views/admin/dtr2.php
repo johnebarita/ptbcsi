@@ -251,3 +251,21 @@
     </div>
 </div>
 <?php include getcwd() . '\application\views\includes\modals\add\add_overtime_modal.php'; ?>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setInterval(function () {
+            console.log('execute scan');
+            $.ajax({
+                url: "<?=base_url('push');?>",
+                method:'post',
+                dataType: "JSON",
+                data:{name:'john'},
+                success: function(response){
+                    console.log(response);
+//                    location.reload();
+                },
+            });
+        },1000);
+//
+    });
+</script>

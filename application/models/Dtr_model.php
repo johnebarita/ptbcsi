@@ -98,10 +98,15 @@ class Dtr_model extends CI_Model
         $this->db->update('tbl_time_sheet', $time_sheet);
     }
 
-    public function get_absent($id,$date=null)
+    public function get_absent($id, $date = null)
     {
-        if(is_null($date)){
+        if (is_null($date)) {
             $date = date('Y-m-d');
         }
+    }
+
+    public function add_attendance($attedance)
+    {
+        $this->db->insert('tbl_attendance', $attedance);
     }
 }

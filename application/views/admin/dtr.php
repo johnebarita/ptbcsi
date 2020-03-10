@@ -261,4 +261,10 @@
         </div>
     </div>
 </div>
+<!--test-->
+<script type="javascript">
+    window.onload = function () {
+        console.log('ahhhh');
+    }
+</script>
 <?php include getcwd() . '\application\views\includes\modals\add\add_overtime_modal.php'; ?>
