@@ -1,18 +1,20 @@
 <IfModule mod_rewrite.c>
-    Options -Indexes
+    #Options -Indexes
     RewriteEngine On
     # force https for all URLs
-    #RewriteCond %{HTTPS} =off
-    #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # RewriteCond %{HTTPS} =off
+    # RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # don't do anything for images/css/js
     RewriteRule \.(gif|jpe?g|png|css|js)$ - [NC,L]
+
+    #RewriteBase /estimatorpro_test/
 
     ### Canonicalize codeigniter URLs
 
     # If your default controller is something other than
     # "welcome" you should probably change this
-    RewriteRule ^(liberty(/index)?|index(\.php)?)/?$ / [L,R=301]
+    RewriteRule ^(draftingzone(/index)?|index(\.php)?)/?$ / [L,R=301]
     RewriteRule ^(.*)/index/?$ $1 [L,R=301]
 
     # Removes trailing slashes (prevents SEO duplicate content issues)
@@ -22,8 +24,8 @@
     # Enforce www
     # If you have subdomains, you can add them to
     # the list using the "|" (OR) regex operator
-    # RewriteCond %{HTTP_HOST} !^(www|subdomain) [NC]
-    # RewriteRule ^(.*)$ http://www.domain.tld/$1 [L,R=301]
+    #RewriteCond %{HTTP_HOST} !^(www|subdomain) [NC]
+    #RewriteRule ^(.*)$ http://www.printxpress.net.co/$1 [L,R=301]
 
     # Enforce NO www
     #RewriteCond %{HTTP_HOST} ^www [NC]
@@ -49,7 +51,16 @@
 
 <IfModule !mod_rewrite.c>
 
+
+</IfModule>
+# Allow access from all domains for webfonts.
+# Alternatively you could only whitelist your
+# subdomains like "subdomain.example.com".
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css)$">
+    Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+
     # Without mod_rewrite, route 404's to the front controller
     ErrorDocument 404 /index.php
-
 </IfModule>
