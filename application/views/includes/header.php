@@ -30,7 +30,7 @@
     <link href="<?=base_url();?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
     <link href="<?=base_url();?>assets/toastr/toastr.css" rel="stylesheet">
-
+    <script src="<?= base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.1.3/jquery.floatThead.min.js"></script>-->
     <script type="text/javascript" src="<?=base_url();?>assets/vendor/jquery/jquery.floatThead.min.js"></script>
