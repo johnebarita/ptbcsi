@@ -27,7 +27,7 @@
     <!-- Custom styles for this template-->
     <link href="<?=base_url();?>assets/css/defaultTheme.css" rel="stylesheet">
     <link href="<?=base_url();?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="<?=base_url();?>assets/css/bootstrap.css" rel="stylesheet">
+<!--    <link href="--><?//=base_url();?><!--assets/css/bootstrap.css" rel="stylesheet">-->
 
     <link href="<?=base_url();?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
