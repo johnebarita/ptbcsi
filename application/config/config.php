@@ -24,7 +24,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 //*/
 //$config['base_url'] = 'http://localhost/ptbcsi/';
-
 //$config['base_url'] = 'http://localhost:8081/ptbcsi/';
 $config['base_url'] = 'https://test2.estimit.net/~maricris/ptbcsi/';
 

@@ -36,4 +36,15 @@ class Position_Model extends CI_Model
         $this->db->where('position_id', $id);
         $this->db->delete('tbl_position');
     }
+
+    public function get_references($position_id)
+    {
+        $result = $this->db->select('*')
+            ->from('tbl_position as position')
+            ->join('tbl_employee as employee', 'position.position_id = employee.position_id')
+            ->where('position.position_id', $position_id)
+            ->get()
+            ->result();
+            return $result;
+    }
 }
