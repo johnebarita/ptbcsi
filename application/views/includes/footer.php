@@ -35,19 +35,27 @@
             }
         });
     });
-
-
-    var span = document.getElementById('span');
-
-    function time() {
-        var d = new Date();
-        var s = d.getSeconds();
-        var m = d.getMinutes();
-        var h = d.getHours();
-        span.textContent = h + ":" + m + ":" + s;
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
+//    $(document).ready(function () {
+//        try{
+//            $('#dataTable').DataTable();
+//        }catch (Exception e){}
+//    });
 
-    setInterval(time, 1000);
+
+    //    var span = document.getElementById('span');
+    //
+    //    function time() {
+    //        var d = new Date();
+    //        var s = d.getSeconds();
+    //        var m = d.getMinutes();
+    //        var h = d.getHours();
+    //        span.textContent = h + ":" + m + ":" + s;
+    //    }
+    //
+    //    setInterval(time, 1000);
 
 </script>
 </body>

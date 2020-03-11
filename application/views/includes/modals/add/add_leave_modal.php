@@ -17,7 +17,7 @@
                                 <label for="formGroupExampleInput">Employee Name</label>
                                 <br/>
                                 <?php if($my_leave):?>
-                                    <input type="text" class="form-control" id="formGroupExampleInput" value="<?=$_SESSION['name'];?>"  disabled>
+                                    <input type="text" class="form-control"  value="<?=$_SESSION['name'];?>"  disabled>
                                     <input type="text" name="user_id" value="<?= $_SESSION['user_id']; ?>" hidden/>
                                 <?php elseif($_SESSION['user_type']!="Employee"):?>
                                     <select name="user_id" id="month" class="input input-sm monthName" style="width: 100%;padding: 5px">
@@ -31,21 +31,21 @@
                                 <?php endif;?>
                             </div>
                             <div class="form-group">
-                                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="mm : dd : yy" hidden>
+                                <input type="date" class="form-control"  placeholder="mm : dd : yy" hidden>
                             </div>
                             <div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">Date from</label>
-                                    <input type="date" id="date" class="form-control" id="formGroupExampleInput" name="date_from" value="<?=date("Y-m-d");?>" >
+                                    <input type="date" id="date" class="form-control"  name="date_from" value="<?=date("Y-m-d");?>" >
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Date to</label>
-                                    <input type="date" class="form-control" id="formGroupExampleInput2" name="date_to" value="<?=date("Y-m-d");?>" >
+                                    <input type="date" class="form-control"  name="date_to" value="<?=date("Y-m-d");?>" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Type of Leave</label>
-                                <select name="leave_type" id="leave_type" class="input input-sm year">
+                                <select name="leave_type" class="input input-sm year">
                                     <option value="Sick" >Sick</option>
                                     <option value="Maternity" >Maternity</option>
                                 </select>&nbsp;&nbsp;

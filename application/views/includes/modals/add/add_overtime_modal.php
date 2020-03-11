@@ -13,7 +13,7 @@
                         <br>
                         <form method="post" action="add-overtime">
                             <?php if($_SESSION['user_type']!="Employee"):?>
-                                <select name="user_id" id="month" class="input input-sm monthName" style="width: 100%;padding: 5px">
+                                <select name="user_id"  class="input input-sm monthName" style="width: 100%;padding: 5px">
                                     <?php foreach ($users as $user):?>
                                         <?php if($user->employee_id!=$_SESSION['user_id']):?>
                                             <option value="<?=$user->employee_id;?>" ><?= strtoupper($user->lastname." ".$user->firstname);?></option>

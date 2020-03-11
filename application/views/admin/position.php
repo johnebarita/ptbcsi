@@ -74,14 +74,14 @@
                         <div class="form-group row">
                             <label for="posTitle" class="col-sm-5 col-form-label">Position Title</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="position" name="position" required value="<?=$position->position;?>">
+                                <input type="text" class="form-control"  name="position" required value="<?=$position->position;?>">
                                 <input type="text" name="position_id" value="<?= $position->position_id ?>" hidden/>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="rph" class="col-sm-5 col-form-label">Wage</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="rate" min="1" required name="rate" value="<?=($position->rate);?>">
+                                <input type="text" class="form-control"  min="1" required name="rate" value="<?=($position->rate);?>">
                             </div>
                         </div>
                         <div class="form-group row">

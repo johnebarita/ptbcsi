@@ -58,11 +58,16 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <?php include 'includes/scripts.php'?>
+<!--  --><?php //include 'includes/scripts.php'?>
+
+  <script src="<?= base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
   <script>
       error();
       function error() {
           $("#error").appendTo("#error_div").prop('hidden', false);
+      }
+      if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
       }
   </script>
 </body>

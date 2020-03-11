@@ -58,13 +58,13 @@
                         <label for="in" class="col-sm-3 col-form-label">Time in</label>
                         <div class="col-sm-5">
                             <input type="text" name="schedule_id" class="form-control" value =<?=$schedule->schedule_id;?> hidden>
-                            <input type="time" class="form-control" id="in" name="time_in"  required value=<?=$schedule->time_in;?>/>
+                            <input type="time" class="form-control"  name="time_in"  required value=<?=$schedule->time_in;?>/>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="out" class="col-sm-3 col-form-label">Time out</label>
                         <div class="col-sm-5">
-                            <input type="time" name="time_out" class="form-control" id="out" value=<?=$schedule->time_out;?>>
+                            <input type="time" name="time_out" class="form-control" value=<?=$schedule->time_out;?>>
                         </div>
                     </div>
                     <div class="modal-footer">

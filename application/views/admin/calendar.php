@@ -71,7 +71,7 @@
     </div>
 </div>
 
-
+</div>
 <script type="text/javascript">
 
     var events = <?php echo json_encode($data) ?>;
@@ -94,8 +94,8 @@
         events: events
     })
 
-    $(function () {
-        $("#dob").datepicker();
-    });
+//    $(function () {
+//        $("#dob").datepicker();
+//    });
 
 </script>

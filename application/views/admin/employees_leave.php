@@ -119,25 +119,25 @@
                         <form method="post" action="">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Employee Name</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Valerie Luna">
+                                <input type="text" class="form-control" placeholder="Valerie Luna">
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput2">Date Requested</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="mm / dd / yy">
+                                <input type="text" class="form-control"  placeholder="mm / dd / yy">
                             </div>
                             <div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">Date from</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="mm / dd / yy">
+                                    <input type="text" class="form-control" placeholder="mm / dd / yy">
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Date to</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="mm / dd / yy">
+                                    <input type="text" class="form-control"  placeholder="mm / dd / yy">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Type of Leave</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="dropdown ni">
+                                <input type="text" class="form-control" placeholder="dropdown ni">
                             </div>
                         </form>
                         <!-- Form -->

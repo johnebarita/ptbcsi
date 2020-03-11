@@ -6,15 +6,6 @@
  * Time: 10:45 AM
  */ ?>
 
-<!--<script type="text/javascript"-->
-<!--        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
-<!--<script type="text/javascript"-->
-<!--        src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.1.3/jquery.floatThead.min.js"></script>-->
-<script
-        type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"
-
-></script>
 <style id="compiled-css" type="text/css">
 
     /* CSS overrides for JQuery UI theme */
@@ -238,6 +229,13 @@
         </div>
     </div>
 </div>
-
-
+<script type="text/javascript">
+    window.onload = function () {
+        $("#prod-list").floatThead({
+            scrollContainer: function ($table) {
+                return $('#wages-table-container');
+            }
+        });
+    }
+</script>
 

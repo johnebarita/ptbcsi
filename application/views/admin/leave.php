@@ -91,21 +91,21 @@
                         <form method="post" action="update-leave">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Employee Name</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" value="<?=$_SESSION['name'];?>"  disabled>
+                                <input type="text" class="form-control" value="<?=$_SESSION['name'];?>"  disabled>
                                 <input type="text" name="leave_id" hidden value=<?=$leave->leave_request_id;?> />
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput2">Date Requested</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" value="<?=$leave->date_request;?>" disabled/>
+                                <input type="text" class="form-control"  value="<?=$leave->date_request;?>" disabled/>
                             </div>
                             <div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">Date from</label>
-                                    <input type="date" class="form-control" name="date_from"id="formGroupExampleInput" min=<?=date('Y-m-d');?> value=<?=$leave->request_start_time;?>>
+                                    <input type="date" class="form-control" name="date_from"min=<?=date('Y-m-d');?> value=<?=$leave->request_start_time;?>>
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Date to</label>
-                                    <input type="date"  class="form-control" name="date_to" id="formGroupExampleInput2" value=<?=$leave->request_duration;?>>
+                                    <input type="date"  class="form-control" name="date_to"  value=<?=$leave->request_duration;?>>
                                 </div>
                             </div>
                             <div class="form-group">

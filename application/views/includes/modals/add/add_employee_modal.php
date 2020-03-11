@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col-3">
                                     <label for="formGroupExampleInput2">Contact Person / Mobile Number</label>
-                                    <input type="text" class="form-control" id="phone_number"
+                                    <input type="text" class="form-control" id="contact_phone_number"
                                            name="phone_number" >
                                 </div>
                                 <!--                                <div class="col-3">-->
@@ -137,7 +137,7 @@
                             <div class="row mt-2">
                                 <div class="col-2">
                                     <label for="formGroupExampleInput">Active</label>
-                                    <select required name="active" id="active"
+                                    <select required name="active"
                                             class="form-control input input-sm monthName"
                                             style="width: 100%;padding: 5px" required>
                                         <option value="1">Yes</option>
@@ -165,7 +165,7 @@
                                 <div class="col-6">
                                     <label for="formGroupExampleInput">Salary</label>
                                     <input type="number" class="form-control" id="monthly_pay"
-                                           value="<?= $position->rate ?> " placeholder="Monthly Pay" name="monthly_pay">
+                                           value=<?= $position->rate ?>  placeholder="Monthly Pay" name="monthly_pay">
                                 </div>
                                 <div class="col-3">
                                     <label for="formGroupExampleInput">Fixed Salary</label>
@@ -232,14 +232,14 @@
         var home_no = $('#home_no').val();
         var email = $('#email').val();
         var contact_person = $('#contact_person').val();
-        var phone_number = $('#phone_number').val();
+        var contact_phone_number = $('#contact_phone_number').val();
         var date_hired = $('#date_hired').val();
         var bank_name = $('#bank_name').val();
         var tin_no = $('#tin_no').val();
         var philhealth_no = $('#philhealth_no').val();
         var sss_no = $('#sss_no').val();
         var pagibig_no = $('#pagibig_no').val();
-        var active = $('#active').val();
+        var active = $('.active').val();
         var position_id = $('#position_id').val();
         var monthly_pay = $('#monthly_pay').val();
         var isFixed_salary = $('#isFixed_salary').val();
@@ -264,7 +264,7 @@
             home_no:home_no,
             email:email,
             contact_person:contact_person,
-            phone_number:phone_number,
+            contact_phone_number:phone_number,
             date_hired:date_hired,
             bank_name:bank_name,
             tin_no:tin_no,

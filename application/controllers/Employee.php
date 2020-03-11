@@ -50,6 +50,7 @@ class Employee extends CI_Controller
             $employee->phone_number = $_POST['phone_number'];
             $employee->home_no = $_POST['home_no'];
             $employee->contact_person = $_POST['contact_person'];
+            $employee->contact_phone_number = $_POST['contact_phone_number'];
 //            $employee->employee_status = $_POST['employee_status'];
             $employee->date_hire = $_POST['date_hired'];
             $employee->monthly_pay = $_POST['monthly_pay'];
