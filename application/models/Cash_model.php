@@ -35,11 +35,17 @@ class Cash_model extends CI_Model
         $this->db->update('tbl_cash_advance', $cash);
     }
 
-    public function delete($cash_advance_id)
-    {
-        $this->db->where('cash_advance_id', $cash_advance_id);
-        $this->db->delete('tbl_cash_advance');
-    }
+
+
+
+
+
+
+
+
+
+
+
 
     public function get_one()
     {
