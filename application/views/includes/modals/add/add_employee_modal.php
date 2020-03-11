@@ -282,17 +282,19 @@
             },
             beforeSend: function () {
                 $('#addEmp').modal('hide');
-                $('#loading').modal('show');
+//                $('#loading').modal('show');
             },
             complete: function () {
                 $('#loading').modal('hide');
             },
             success: function (response) {
+
                 toastr.success("Employee added successfully!", 'Success :)');
 
             },
             error: function () {
-                toastr.error('Unable to connect to the biometric device!', 'Error :(');
+
+                toastr.error('Unable to connect to the biometric device!', 'Errorssss :(');
             }
         });
     });

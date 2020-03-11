@@ -40,7 +40,7 @@ class Schedule_model extends CI_Model
         $this->db->delete('tbl_schedule');
     }
 
-    public function get_refrences($schedule_id){
+    public function get_references($schedule_id){
         $result = $this->db->select('*')
             ->from('tbl_schedule as schedule')
             ->join('tbl_position as position','schedule.schedule_id = position.schedule_id')

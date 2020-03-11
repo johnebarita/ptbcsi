@@ -63,13 +63,13 @@ class Schedule extends CI_Controller
             if (empty($res))
             {
                 $this->schedule_model->delete($_POST['schedule_id']);
+                echo json_encode(true);
             }
             else
             {
-                $error_msg = "<h6 id='error' style='color: rgba(255, 0,0,0.7); 'hidden>Selected schedule deleted unsuccessfully. The selected schedule is currently used.</h6>";
-                echo $error_msg;
+
             }
         }
-        redirect(base_url('schedule'));
+//        redirect(base_url('schedule'));
     }
 }

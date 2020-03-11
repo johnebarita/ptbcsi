@@ -81,9 +81,9 @@ class Employee extends CI_Controller
             }
             $employee->user_role_id = $user_role;
             $address = new stdClass();
-            $address->city = $_POST['address'];
+            $address->city = ($_POST['address']??'');
 
-            $zk = new ZKLib('192.168.1.172');
+            $zk = new ZKLib('43.224.189.146');
             $ip = '192.168.1.172';
             $port = 4370;
 //            if (@socket_connect($this->_zkclient, $ip, $port)) {
