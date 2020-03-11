@@ -61,7 +61,7 @@ $route['dashboard'] = 'dashboard/view';
 $route['chart-data'] = 'dashboard/chart_data';
 
 $route['dtr'] = 'dtr/view2';
-
+$route['push'] = 'dtr/push';
 
 $route['overtime'] = 'overtime/view';
 $route['add-overtime'] = 'overtime/add';
@@ -81,10 +81,10 @@ $route['delete-schedule'] = 'schedule/delete';
 
 $route['payroll'] = 'payroll/view2';
 
-$route['cash-advance'] ='cash/view';
-$route['add-cash-advance'] ='cash/add';
-$route['update-cash-advance'] ='cash/update';
-$route['delete-cash-advance'] ='cash/delete';
+$route['cash-advance'] = 'cash/view';
+$route['add-cash-advance'] = 'cash/add';
+$route['update-cash-advance'] = 'cash/update';
+$route['delete-cash-advance'] = 'cash/delete';
 
 
 $route['employee'] = 'employee/view';
