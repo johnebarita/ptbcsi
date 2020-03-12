@@ -71,8 +71,8 @@
                             <label for="sched" class="col-sm-5 col-form-label">Schedule</label>
                             <div class="col-sm-6">
                                 <select class="form-control" name="schedule_id" id="sched" data-style="btn-light">
-                                    <?php foreach ($schedules as $row){?>
-                                        <option class="form-control" value=<?=$row->schedule_id?> ><?=$row->time_in." - ".$row->time_out?></option>
+                                    <?php foreach ($schedules as $schedule){?>
+                                        <option <?php if ($position->position_id == $schedule->schedule_id) echo "selected" ;?> value="<?=$schedule->schedule_id;?>"><?=$schedule->time_in." - ".$schedule->time_out ;?></option>
                                     <?php }?>
                                 </select>
                             </div>
