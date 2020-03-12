@@ -68,13 +68,12 @@ class Position extends CI_Controller
             if (empty($res))
             {
                 $this->position_model->delete($_POST['position_id']);
+                echo json_encode(true);
             }
             else
             {
-                $error_msg = "<h6 id='error' style='color: rgba(255,0,0,0.7)' hidden>Selected position is deleted unsuccessfully. The selected position is currently being used.</h6>";
-                echo $error_msg;
+
             }
         }
-        redirect(base_url('position'));
     }
 }

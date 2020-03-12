@@ -19,34 +19,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                    if ($positions > 0)
-                    {
-                        foreach ($positions as $position)
-                        {
-                            ?>
-                            <tr class="text_center">
-                                <td><?=$position->position;?></td>
-                                <td><?=number_format($position->rate, 2);?></td>
-                                <td><?=$position->time_in.' - '.$position->time_out;?></td>
-                                <td>
-                                    <i class="btn btn-info fa fa-edit iconedit" data-toggle="modal" data-target="#positionEdit<?=$position->position_id;?>">&nbsp;&nbsp;Edit</i>&nbsp;&nbsp;&nbsp;
-                                    <i class="btn btn-danger fa fa-trash-alt icondelete" data-toggle="modal" data-target="#positionDelete<?=$position->position_id;?>">&nbsp;&nbsp;Delete</i>
-                                </td>
-                            </tr>
-                            <?php
-                        }
-                    }
-                    else
-                    {
-                        ?>
-                        <tr>
-                            <td colspan="2">NO DATA FOUND</td>
+                    <?php foreach ($positions as $position):?>
+                        <tr class="text_center">
+                            <td><?=$position->position;?></td>
+                            <td><?=number_format($position->rate, 2);?></td>
+                            <td><?=$position->time_in.' - '.$position->time_out;?></td>
+                            <td>
+                                <i class="btn btn-info fa fa-edit iconedit" data-toggle="modal" data-target="#positionEdit<?=$position->position_id;?>">&nbsp;&nbsp;Edit</i>&nbsp;&nbsp;&nbsp;
+                                <i class="btn btn-danger fa fa-trash-alt icondelete" data-toggle="modal" data-target="#positionDelete<?=$position->position_id;?>">&nbsp;&nbsp;Delete</i>
+                            </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
-
+                    <?php endforeach;?>
                     </tbody>
                 </table>
             </div>
@@ -89,7 +72,7 @@
                             <div class="col-sm-6">
                                 <select class="form-control" name="schedule_id" id="sched" data-style="btn-light">
                                     <?php foreach ($schedules as $row){?>
-                                        <option value=<?=$row->schedule_id?> ><?=$row->time_in." - ".$row->time_out?></option>
+                                        <option class="form-control" value=<?=$row->schedule_id?> ><?=$row->time_in." - ".$row->time_out?></option>
                                     <?php }?>
                                 </select>
                             </div>
@@ -114,18 +97,47 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="delete-position" method="post">
-                        <input type="text" name="position_id" class="form-control" value =<?=$position->position_id;?> hidden>
-                    <p class="text_center">Are you sure you want to delete this schedule?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="submit" class="btn btn-primary">Yes</button>
-                </div>
+                <form>
+                    <div class="modal-body">
+                            <input type="text" name="position_id" id="position_id<?=$position->position_id ;?>" class="form-control" value =<?=$position->position_id;?> hidden>
+                        <p class="text_center">Do you want to delete this position?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-primary" id="delete<?=$position->position_id ;?>">Yes</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+        <script>
+            $("#delete<?=$position->position_id ;?>").on('click', function (e) {
+                e.preventDefault();
+                var position_id = $('#position_id<?=$position->position_id;?>').val();
 
+                $.ajax({
+                    url: "<?=base_url('delete-position');?>",
+                    method: 'post',
+                    dataType: "JSON",
+                    data: {
+                        position_id: position_id
+                    },
+//                complete: function () {
+//                    $('#loading').modal('hide');
+//                },
+                    beforeSend: function () {
+                        $('#positionDelete<?=$position->position_id;?>').modal('hide');
+//                $('#loading').modal('show');
+                    },
+                    success: function (response) {
+                        toastr.success("Position deleted successfully", 'Success');
+                        window.setTimeout(function(){location.reload()},3000)
+                    },
+                    error: function () {
+
+                        toastr.error('Unable to delete the selected position. The position is currently being used!', 'Error!');
+                    }
+                });
+            });
+        </script>
 <?php endforeach;?>

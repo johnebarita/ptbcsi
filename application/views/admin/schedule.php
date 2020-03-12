@@ -99,16 +99,16 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="delete-schedule" method="POST">
-                        <input type="text" name="schedule_id" id="schedule_id<?= $schedule->schedule_id; ?>"
-                               class="form-control" value=<?= $schedule->schedule_id; ?> hidden>
-                        <p class="text_center">Are you sure you want to delete this schedule?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="submit" class="btn btn-primary" id="delete<?= $schedule->schedule_id ?>">Yes</button>
-                </div>
+                <form>
+                    <div class="modal-body">
+                            <input type="text" name="schedule_id" id="schedule_id<?= $schedule->schedule_id; ?>"
+                                   class="form-control" value=<?= $schedule->schedule_id; ?> hidden>
+                            <p class="text_center">Do you want to delete this schedule?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-primary" id="delete<?= $schedule->schedule_id ;?>">Yes</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -133,96 +133,14 @@
 //                $('#loading').modal('show');
                 },
                 success: function (response) {
-                    toastr.success("Employee added successfully!", 'Success :)');
-//                    location.reload();
+                    toastr.success("Schedule deleted successfully", 'Success');
+                    window.setTimeout(function(){location.reload()},3000)
                 },
                 error: function () {
 
-                    toastr.error('Unable to connect to the biometric device!', 'Errorssss :(');
+                    toastr.error('Unable to delete the selected schedule. The schedule is currently being used!', 'Error!');
                 }
             });
         });
     </script>
 <?php endforeach; ?>
-<script>
-    $('#add-employee').on('click', function (e) {
-        e.preventDefault();
-
-        var firstname = $('#firstname').val();
-        var middlename = $('#middlename').val();
-        var lastname = $('#lastname').val();
-        var gender = $('#gender').val();
-        var birth_date = $('#birth_date').val();
-        var marital_status = $('#marital_status').val();
-        var address = $('#address').val();
-        var phone_number = $('#phone_number').val();
-        var home_no = $('#home_no').val();
-        var email = $('#email').val();
-        var contact_person = $('#contact_person').val();
-        var contact_phone_number = $('#contact_phone_number').val();
-        var date_hired = $('#date_hired').val();
-        var bank_name = $('#bank_name').val();
-        var tin_no = $('#tin_no').val();
-        var philhealth_no = $('#philhealth_no').val();
-        var sss_no = $('#sss_no').val();
-        var pagibig_no = $('#pagibig_no').val();
-        var active = $('.active').val();
-        var position_id = $('#position_id').val();
-        var monthly_pay = $('#monthly_pay').val();
-        var isFixed_salary = $('#isFixed_salary').val();
-        var transportation_allowance = $('#transportation_allowance').val();
-        var internet_allowance = $('#internet_allowance').val();
-        var meal_allowance = $('#meal_allowance').val();
-        var phone_allowance = $('#phone_allowance').val();
-
-        $.ajax({
-            url: "<?=base_url('add-employee');?>",
-            method: 'post',
-            dataType: "JSON",
-            data: {
-                firstname: firstname,
-                middlename: middlename,
-                lastname: lastname,
-                gender: gender,
-                birth_date: birth_date,
-                marital_status: marital_status,
-                address: address,
-                phone_number: phone_number,
-                home_no: home_no,
-                email: email,
-                contact_person: contact_person,
-                contact_phone_number: phone_number,
-                date_hired: date_hired,
-                bank_name: bank_name,
-                tin_no: tin_no,
-                philhealth_no: philhealth_no,
-                sss_no: sss_no,
-                pagibig_no: pagibig_no,
-                active: active,
-                position_id: position_id,
-                monthly_pay: monthly_pay,
-                isFixed_salary: isFixed_salary,
-                transportation_allowance: transportation_allowance,
-                internet_allowance: internet_allowance,
-                meal_allowance: meal_allowance,
-                phone_allowance: phone_allowance,
-            },
-            beforeSend: function () {
-                $('#addEmp').modal('hide');
-//                $('#loading').modal('show');
-            },
-            complete: function () {
-                $('#loading').modal('hide');
-            },
-            success: function (response) {
-
-                toastr.success("Employee added successfully!", 'Success :)');
-
-            },
-            error: function () {
-
-                toastr.error('Unable to connect to the biometric device!', 'Errorssss :(');
-            }
-        });
-    });
-</script>

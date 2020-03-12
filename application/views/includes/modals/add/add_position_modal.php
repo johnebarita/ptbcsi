@@ -34,7 +34,7 @@
                         <div class="col-sm-5">
                             <select class="form-control" name="schedule_id" data-style="btn-light">
                                 <?php foreach ($schedules as $row){?>
-                                    <option value=<?=$row->schedule_id?> ><?=$row->time_in." - ".$row->time_out?></option>
+                                    <option class="form-control" value=<?=$row->schedule_id?> ><?=$row->time_in." - ".$row->time_out?></option>
                                 <?php }?>
                             </select>
                         </div>

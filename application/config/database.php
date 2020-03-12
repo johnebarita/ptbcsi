@@ -79,6 +79,10 @@ $db['default'] = array(
 	'username' => 'maricris',
 	'password' => 'tallice81',
 	'database' => 'maricris_ptbcsi',
+
+//    'username' => 'root',
+//    'password' => '',
+//    'database' => 'ptbcsi',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
