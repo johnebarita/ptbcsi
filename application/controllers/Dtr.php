@@ -331,7 +331,7 @@ class Dtr extends CI_Controller
 
     public function add()
     {
-        date_default_timezone_set('Asia/Manila');
+//        date_default_timezone_set('Asia/Manila');
         //Default Timezone Of Your Country;
 //        include(getcwd() . '/application/libraries/zklib/ZKLib.php');
 

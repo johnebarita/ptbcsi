@@ -144,3 +144,27 @@
         });
     </script>
 <?php endforeach; ?>
+
+for(int i = 0; i<3;i++){ //months
+    start_date = ...
+    end_data = ...
+    holidays = ....
+    employees = ...
+    for(employees){
+        dtrs = get time_sheets of each employee from start to end dates.
+        since kabalo naman ka if pila ka days ang month (days_in_month())
+        int ndx= 0;
+        for(int j = 0 ; j<days_in_month(); j++){
+            //Lates per month
+            check sa dtr na controller
+
+
+            //Absences per month
+            if(dtr[ndx]->date == j){ //date is in YYYY-mm-dd you just need to get the d part (ask me if nana ka dri na part)
+
+            }elseif(j !=="sun" || j!= holiday || j != today){// compare the d part of the date (ask me nalang sad dri na part)
+                absent ++;
+            }
+        }
+    }
+}
