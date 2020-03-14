@@ -6,7 +6,7 @@
  * Date: 13/03/2020
  * Time: 4:57 PM
  */
-class crontroller extends CI_Controller
+class crontroller
 {
     public function __construct()
     {
@@ -17,7 +17,11 @@ class crontroller extends CI_Controller
     }
 
     public function push(){
+        echo ("TEST");
+
+
         $zk = new ZKLib('43.224.189.146');
+
         if ($zk->connect()) {
             $zk->disableDevice();
             $attendances = $zk->getAttendance();
