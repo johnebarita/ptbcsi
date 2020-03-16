@@ -41,7 +41,7 @@ if ($ret) {
             $query = "INSERT INTO tbl_attendance(uid,id,name,state,date,time,type) 
                                   VALUES ('$uid', '$id', '$name', '$state','$date','$time','$type')";
             if (!$result = mysqli_query($db, $query)) {
-                exit(mysqli_error());
+                exit(mysqli_error($db));
             }
         }
         $zk->clearAttendance();
