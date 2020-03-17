@@ -56,15 +56,6 @@ class Crontroller
 
     function update_dtr($uid, $id, $name, $state, $date, $time, $type, $db)
     {
-        $m_i = '';
-        $m_o = '';
-        $m_t = '';
-        $a_i = '';
-        $a_o = '';
-        $a_t = '';
-        $o_i = '';
-        $o_o = '';
-        $o_t = '';
 
 
         $query = "SELECT * FROM tbl_time_sheet where employee_id = '" . $id . "' and date ='" . $date . "'";
@@ -82,11 +73,24 @@ class Crontroller
             $query = "SELECT * FROM tbl_time_sheet where employee_id = " . $id . " date =`" . $date . "`";
             $dtr = mysqli_query($db, $query)->fetch_assoc();
         }
+        $m_i = $dtr['morning_in'];
+        $m_o = $dtr['morning_out'];
+        $m_t = $dtr['morning_time'];
+        $a_i = $dtr['afternoon_in'];
+        $a_o = $dtr['afternoon_out'];
+        $a_t = $dtr['afternoon_time'];
+        $o_i = $dtr['overtime_in'];
+        $o_o = $dtr['overtime_out'];
+        $o_t = $dtr['overtime_time'];
+
 
         if ($am == "AM") {
+            var_dump("AM");
             if (empty($dtr['morning_in'])) {
+                var_dump("IN");
                 $m_i = $time;
-            } elseif (empty($dtr['morning_in']) && empty($dtr['morning_out'])) {
+            } elseif (!($dtr['morning_in']) && empty($dtr['morning_out'])) {
+                var_dump("OUT");
                 $m_o = $time;
                 $a = str_replace(":", ".", $dtr['morning_in']);
                 $a = doubleval($a);
@@ -96,9 +100,12 @@ class Crontroller
 
             }
         } else {
+            var_dump("PM");
             if (empty($dtr['afternoon_in'])) {
+                var_dump("IN");
                 $a_i = $time;
-            } elseif (empty($dtr['afternoon_in']) && empty($dtr['afternoon_out'])) {
+            } elseif (empty($dtr['afternoon_in'])!=true && empty($dtr['afternoon_out'])) {
+                var_dump("OUT");
                 $a_o = $time;
                 $a = str_replace(":", ".", $dtr['afternoon_in']);
                 $a = doubleval($a);
@@ -107,7 +114,21 @@ class Crontroller
                 $a_t = $b - $a;
             }
         }
+        var_dump($dtr);
+        var_dump($m_i);
+        var_dump($m_o);
+        var_dump($m_t);
+        var_dump($a_i);
+        var_dump($a_o);
+        var_dump($a_t);
+        var_dump($o_i);
+        var_dump($o_o);
+        var_dump($o_t);
 
+        var_dump(empty($dtr['morning_in']));
+        var_dump(empty($dtr['morning_out']));
+        var_dump(empty($dtr['afternoon_in'])!=true);
+        var_dump(empty($dtr['afternoon_out']));
         $query = "UPDATE tbl_time_sheet SET
                   morning_in='" . $m_i . "',
                   morning_out='" . $m_o. "',
@@ -119,6 +140,7 @@ class Crontroller
                   overtime_out='" . $o_o. "',
                   overtime_time='" . $o_t. "'
                   WHERE time_sheet_id=" . $dtr['time_sheet_id'];
+
 
         if (mysqli_query($db, $query)) {
             echo "Record updated successfully";

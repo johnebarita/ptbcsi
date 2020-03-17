@@ -26,11 +26,6 @@ class Dashboard extends CI_Controller
     {
         $employees = $this->employee_model->get_employees();
         $lates = $this->late_today();
-//        $lat = $this->late_by_month();
-//        echo "<pre>";
-//        var_dump($lat['lates']);
-//        var_dump($lat['ontime']);
-//        var_dump($lat['absences']);
         $data['lates'] = $lates;
         $data['page_load'] = "admin/dashboard";
         $data['active'] = "dashboard";
