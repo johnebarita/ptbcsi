@@ -109,4 +109,15 @@ class Dtr_model extends CI_Model
     {
         $this->db->insert('tbl_attendance', $attedance);
     }
+
+    public function get_today($user_id, $start_day)
+    {
+        $res = $this->db->select('*')
+            ->from('tbl_time_sheet')
+            ->where('employee_id', $user_id)
+            ->where('date',  $start_day)
+            ->get()
+            ->result();
+        return $res;
+    }
 }

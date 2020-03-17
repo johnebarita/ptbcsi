@@ -228,7 +228,6 @@
 
     // Bar Chart Example
     var ctx = document.getElementById("myBarChart");
-    console.log('test');
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -276,7 +275,7 @@
                         drawBorder: false
                     },
                     ticks: {
-                        maxTicksLimit: 6
+                        maxTicksLimit: 12
                     },
                     maxBarThickness: 25,
                 }],

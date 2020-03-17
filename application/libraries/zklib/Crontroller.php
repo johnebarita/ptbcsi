@@ -45,8 +45,9 @@ class Crontroller
 
                     if (!$result = mysqli_query($db, $query)) {
                         exit(mysqli_error($db));
+                    }else{
+                        $this->update_dtr($uid, $id, $name, $state, $date, $time, $type, $db);
                     }
-                    $this->update_dtr($uid, $id, $name, $state, $date, $time, $type, $db);
                 }
                 $zk->clearAttendance();
             }
@@ -118,6 +119,12 @@ class Crontroller
                   overtime_out='" . $o_o. "',
                   overtime_time='" . $o_t. "'
                   WHERE time_sheet_id=" . $dtr['time_sheet_id'];
+
+        if (mysqli_query($db, $query)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($db);
+        }
 
 //        if (is_null($dtr['morning_in']) && $am === 'AM') {
 //            $time_sheet['morning_in ']= $time;
