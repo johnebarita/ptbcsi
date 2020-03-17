@@ -405,32 +405,34 @@ class Dtr extends CI_Controller
 
     public function push()
     {
-        $zk = new ZKLib('43.224.189.146');
-        $ret = $zk->connect();
-        if ($ret) {
-            $users = $zk->getUser();
-            $att = $zk->getAttendance();
-            if (count($att) > 0) {
-//                foreach ($att as $a){
-//                    echo json_encode($_POST['name']);
-//                    $z =(isset($users[$a['id']]) ? $users[$a['id']]['name'] : $a['id']);
-                    $attend = new stdClass();
-                    $attend->uid=1;
-                    $attend->id='1';
-                    $attend->name='1';
-                    $attend->state='1';
-                    $attend->date='1';
-                    $attend->time='1';
-                    $attend->type='1';
-                    $this->dtr_model->add_attendance($attend);
-//                }
-                $zk->clearAttendance();
-                echo json_encode("Test");
-            }
-        }
-        $zk->disconnect();
 
-//        echo json_encode($_POST['name']);
+        redirect(base_url('dashboard'));
+//        $zk = new ZKLib('43.224.189.146');
+//        $ret = $zk->connect();
+//        if ($ret) {
+//            $users = $zk->getUser();
+//            $att = $zk->getAttendance();
+//            if (count($att) > 0) {
+////                foreach ($att as $a){
+////                    echo json_encode($_POST['name']);
+////                    $z =(isset($users[$a['id']]) ? $users[$a['id']]['name'] : $a['id']);
+//                    $attend = new stdClass();
+//                    $attend->uid=1;
+//                    $attend->id='1';
+//                    $attend->name='1';
+//                    $attend->state='1';
+//                    $attend->date='1';
+//                    $attend->time='1';
+//                    $attend->type='1';
+//                    $this->dtr_model->add_attendance($attend);
+////                }
+//                $zk->clearAttendance();
+//                echo json_encode("Test");
+//            }
+//        }
+//        $zk->disconnect();
+//
+////        echo json_encode($_POST['name']);
     }
 
 }

@@ -210,21 +210,21 @@
                                 </td>
                                 <td><?= ($dtrs[$j]->morning_time==0?'':$dtrs[$j]->morning_time) ?> </td>
                                 <td>
-                                    <input value="<?= $dtrs[$j]->a_i_h; ?>">:
-                                    <input value="<?= $dtrs[$j]->a_i_m; ?>">
+                                    <input value="<?= ($dtrs[$j]->a_i_h ??'') ; ?>">:
+                                    <input value="<?= ($dtrs[$j]->a_i_m ??'') ; ?>">
                                 </td>
                                 <td>
-                                    <input value="<?= $dtrs[$j]->a_o_h; ?>">:
-                                    <input value="<?= $dtrs[$j]->a_o_m; ?>">
+                                    <input value="<?= ($dtrs[$j]->a_o_h ??'') ; ?>">:
+                                    <input value="<?= ($dtrs[$j]->a_o_m ??'') ; ?>">
                                 </td>
-                                <td><?=  ($dtrs[$j]->afternoon_time==0?'':$dtrs[$j]->afternoon_time); ?> </td>
+                                <td><?=  ($dtrs[$j]->afternoon_time==0?'':$dtrs[$j]->afternoon_time) ; ?> </td>
                                 <td>
-                                    <input value="<?= $dtrs[$j]->o_i_h; ?>">:
-                                    <input value="<?= $dtrs[$j]->o_i_m; ?>">
+                                    <input value="<?= ($dtrs[$j]->o_i_h ??'') ; ?>">:
+                                    <input value="<?= ($dtrs[$j]->o_i_m ??'') ; ?>">
                                 </td>
                                 <td>
-                                    <input value="<?= $dtrs[$j]->o_o_h; ?>">:
-                                    <input value="<?= $dtrs[$j]->o_o_m; ?>">
+                                    <input value="<?= ($dtrs[$j]->o_o_h ??'') ; ?>">:
+                                    <input value="<?= ($dtrs[$j]->o_o_m ??'') ; ?>">
                                 </td>
                                 <td><?= ($dtrs[$j]->overtime_time==0?'':$dtrs[$j]->overtime_time); ?></td>
                                 <td><?= $dtrs[$j]->pre_time == 0 ? '' : $dtrs[$j]->pre_time; ?> </td>

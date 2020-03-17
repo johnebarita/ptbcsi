@@ -59,6 +59,6 @@ class Dashboard extends CI_Controller
 
     public function push()
     {
-        redirect(base_url('dashboard'));
+       return redirect(base_url('dashboard'));
     }
 }
